@@ -56,7 +56,6 @@ final.write('final.xyz')
 images = [initial]
 for image in range(N_intermediate):
     image = initial.copy()
-    image.rattle()
     image.calc = calc()
     images.append(image)
 images.append(final)
