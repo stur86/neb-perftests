@@ -64,5 +64,8 @@ images.append(final)
 neb = NEB(images, k=0.1)
 neb.interpolate()
 
+for i, image in enumerate(neb.images):
+    image.write(f'neb_{i:03d}.cell')
+
 opt = BFGS(neb, trajectory='neb.traj')
 opt.run(fmax=1e-2)
