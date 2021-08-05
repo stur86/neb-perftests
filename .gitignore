@@ -1,2 +1,9 @@
 # Ignore all folders that are just backups created by ASE
 *.bak-*
+
+# CASTEP files that would only take space
+*.check
+*.castep_bin
+*.den_fmt
+*.bands
+*.bib
