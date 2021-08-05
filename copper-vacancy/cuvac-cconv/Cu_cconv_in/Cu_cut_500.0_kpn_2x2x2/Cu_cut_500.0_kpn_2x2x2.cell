@@ -1,5 +1,5 @@
 #######################################################
-#CASTEP cell file: Cu_cconv_in/Cu_cut_300.0_kpn_4x4x4/Cu_cut_300.0_kpn_4x4x4.cell
+#CASTEP cell file: Cu_cconv_in/Cu_cut_500.0_kpn_2x2x2/Cu_cut_500.0_kpn_2x2x2.cell
 #Created using the Atomic Simulation Environment (ASE)#
 #######################################################
 
@@ -44,4 +44,4 @@ Cu  5.419854  3.658432  5.379897
 Cu  5.398617  5.395395  3.536824
 %ENDBLOCK POSITIONS_ABS
 
-KPOINTS_MP_GRID: 4 4 4
+KPOINTS_MP_GRID: 2 2 2

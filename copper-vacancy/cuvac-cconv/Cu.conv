@@ -6,10 +6,10 @@ running_command: castep.mpi <seedname>
 
 # These parameters, if uncommented, allow you to control the range of cutoff energies and kpoints for your convergence
 #
-cutoff_min:     300
-cutoff_max:     600
+cutoff_min:     400
+cutoff_max:     700
 # cutoff_step:	  200
-kpoint_n_min:   1
+kpoint_n_min:   2
 kpoint_n_max:   5
 # kpoint_n_step:  2
 

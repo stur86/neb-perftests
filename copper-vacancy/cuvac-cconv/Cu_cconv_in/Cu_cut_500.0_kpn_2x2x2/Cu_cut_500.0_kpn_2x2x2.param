@@ -1,9 +1,11 @@
 #######################################################
-#CASTEP param file: Cu_cconv_in/Cu_cut_300.0_kpn_2x2x2/Cu_cut_300.0_kpn_2x2x2.param
+#CASTEP param file: Cu_cconv_in/Cu_cut_500.0_kpn_2x2x2/Cu_cut_500.0_kpn_2x2x2.param
 #Created using the Atomic Simulation Environment (ASE)#
 #######################################################
 
 TASK: SinglePoint
-CUT_OFF_ENERGY: 300.0
+CUT_OFF_ENERGY: 500.0
+XC_FUNCTIONAL: pbe
+MAX_SCF_CYCLES: 100
 CALCULATE_STRESS: True
 WRITE_CHECKPOINT: MINIMAL

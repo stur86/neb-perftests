@@ -1,0 +1,2 @@
+xc_functional: pbe
+max_scf_cycles: 100
