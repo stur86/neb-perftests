@@ -1,0 +1,2 @@
+# Ignore all folders that are just backups created by ASE
+*.bak-*
