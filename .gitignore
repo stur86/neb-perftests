@@ -7,3 +7,7 @@
 *.den_fmt
 *.bands
 *.bib
+*.err
+*.cst_esp
+*.usp
+*/[0-9][0-9][0-9][0-9][0-9][0-9].log
