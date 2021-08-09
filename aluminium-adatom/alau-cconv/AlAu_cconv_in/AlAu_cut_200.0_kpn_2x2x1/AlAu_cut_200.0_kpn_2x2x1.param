@@ -1,0 +1,11 @@
+#######################################################
+#CASTEP param file: AlAu_cconv_in/AlAu_cut_200.0_kpn_2x2x1/AlAu_cut_200.0_kpn_2x2x1.param
+#Created using the Atomic Simulation Environment (ASE)#
+#######################################################
+
+TASK: SinglePoint
+CUT_OFF_ENERGY: 200.0
+XC_FUNCTIONAL: pbe
+MAX_SCF_CYCLES: 100
+CALCULATE_STRESS: True
+WRITE_CHECKPOINT: MINIMAL
