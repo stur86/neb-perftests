@@ -13,6 +13,8 @@ if not os.path.exists('initial.traj') or not os.path.exists('final.traj'):
     add_adsorbate(slab, 'Au', 1.7, 'hollow')
     slab.center(axis=2, vacuum=4.0)
 
+    slab.write('AlAu.cell')
+
     # Make sure the structure is correct:
     # view(slab)
 
