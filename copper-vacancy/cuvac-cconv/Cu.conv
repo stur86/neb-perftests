@@ -1,7 +1,7 @@
 # The fundamental parameters: 'all' means the script will create input files, run the simulations and process the output, while running_command is the command that needs to be executed in order to actually run the simulations.
 # If you need to change it remember to keep the <seedname> tag in the right place.
 
-convergence_task: input
+convergence_task: output
 running_command: castep.mpi <seedname>
 
 # These parameters, if uncommented, allow you to control the range of cutoff energies and kpoints for your convergence
