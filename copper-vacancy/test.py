@@ -20,10 +20,13 @@ def make_geomopt(a, name, force=False):
         print('WARNING: path ' + calc._directory + ' exists, skipping')
         return
     calc.param.task = 'geometryoptimisation'
+    calc.param.xc_functional = 'pbe'
+    calc.param.max_scf_cycles = 100
+    calc.param.cut_off_energy = 500.0
     calc.param.calculate_stress = True
     calc.param.write_cell_structure = True
     calc.cell.cell_constraints = "1 1 1\n0 0 0"
-    calc.cell.kpoint_mp_grid = "3 3 3"
+    calc.cell.kpoint_mp_grid = "4 4 4"
     a = a.copy()
     a.calc = calc
 
