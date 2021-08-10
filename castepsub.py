@@ -6,7 +6,7 @@ import subprocess as sp
 parser = ap.ArgumentParser()
 parser.add_argument('seedname', type=str, default=None,
                     help="""CASTEP seedname.""")
-parser.add_argument('-n', type=int, default=12,
+parser.add_argument('-n', type=int, default=16,
                     help="""Number of cores""")
 parser.add_argument('-t', type=str, default='02:00:00',
                     help="""Runtime""")
