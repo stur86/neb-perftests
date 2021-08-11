@@ -25,9 +25,10 @@
 # ASE_INTERFACE _try_reuse : False
 #######################################################
 
-TASK: geometryoptimisation
+TASK: transitionstatesearch
+TSSEARCH_METHOD: neb
 CUT_OFF_ENERGY: 500.0 
-CALCULATE_STRESS: TRUE
 WRITE_CELL_STRUCTURE: TRUE
 XC_FUNCTIONAL: pbe
 MAX_SCF_CYCLES: 100
+TSSEARCH_NEB_MAX_ITER: 100

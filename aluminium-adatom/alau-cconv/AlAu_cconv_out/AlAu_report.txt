@@ -1,7 +1,7 @@
 Tolerance on final energy: 1e-05 eV
 Tolerance on forces: 0.05 eV/Ang
 Tolerance on stresses: 0.1 GPa
-Based on final energy, suggested value for cut off energy is 400.0 eV
+Based on final energy, suggested value for cut off energy is 500.0 eV
 Based on forces, suggested value for cut off energy is 300.0 eV
 Based on stresses, suggested value for cut off energy is 200.0 eV
 Based on final energy, suggested value for k-points grid is 7x7x3 
