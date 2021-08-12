@@ -21,4 +21,7 @@ neb.interpolate()
 
 calc.cell.positions_abs_intermediate = neb.images[1]
 
+for i, im in enumerate(neb.images):
+    io.write('CuVacNebIm{0}.cell'.format(i), im)
+
 a1.write('cuvac-neb/CuVac.cell')
