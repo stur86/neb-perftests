@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
+import os
 import json
 import argparse as ap
 import subprocess as sp
 
-defaults = json.load(open('csub_default.json'))
+pwd = os.path.split(os.path.abspath(__file__))[0]
+defaults = json.load(open(os.path.join(pwd, 'csub_default.json')))
 
 parser = ap.ArgumentParser()
 parser.add_argument('seedname', type=str, default=None,
