@@ -1,3 +1,6 @@
+# Data file that needs to be local
+csub_default.json
+
 # Ignore all folders that are just backups created by ASE
 *.bak-*
 
