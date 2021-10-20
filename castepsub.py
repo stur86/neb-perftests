@@ -34,7 +34,7 @@ script = template.format(seedname=args.seedname, t=args.t, n=args.n,
 # Submit
 proc = sp.Popen(['sbatch'], stdin=sp.PIPE,
                 stdout=sp.PIPE, stderr=sp.PIPE)
-stdout, stderr = proc.communicate(script)
+stdout, stderr = proc.communicate(script.encode('utf-8'))
 
 if stderr.strip() == '':
     print(stdout)
