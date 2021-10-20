@@ -36,7 +36,7 @@ proc = sp.Popen(['sbatch'], stdin=sp.PIPE,
                 stdout=sp.PIPE, stderr=sp.PIPE)
 stdout, stderr = proc.communicate(script.encode('utf-8'))
 
-if stderr.strip() == '':
+if str(stderr.strip()) == '':
     print(stdout)
 else:
     raise RuntimeError(stderr)
