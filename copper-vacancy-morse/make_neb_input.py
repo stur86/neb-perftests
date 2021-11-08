@@ -61,19 +61,19 @@ cuvac_reac.calc.cell.fix_com = False
 
 # Morse potential
 
-# Convert to AUs
-nnr_bohr = nnr*1.88973
-DE_Ha = DE*0.0367493
+# Convert to units
+DE_kcal_mol = DE*23.060922344650095
 # Derived constant
-k = 2*A**2/nnr_bohr**2*DE_Ha
+k = 2*A**2/nnr**2*DE_kcal_mol
 
 cuvac_reac.calc.param.task = 'transitionstatesearch'
 cuvac_reac.calc.param.tssearch_method = 'neb'
 cuvac_reac.calc.param.tssearch_neb_max_iter = 100
-cuvac_reac.calc.param.tssearch_max_path_points = 11
-cuvac_reac.calc.param.tssearch_neb_climbing = True
+cuvac_reac.calc.param.tssearch_max_path_points = 5
+#cuvac_reac.calc.param.tssearch_neb_climbing = True
+cuvac_reac.calc.param.tssearch_force_tol = 1e-3
 cuvac_reac.calc.param.devel_code = """PP=T
-pp: MORS=T MORS_R={R} MORS_K={K} MORS_D={D} :endpp
-""".format(R=nnr_bohr, K=k, D=DE_Ha)
+pp: MORS=T MORS_CUT={CR} MORS_R={R} MORS_K={K} MORS_D={D} :endpp
+""".format(CR=2.2*nnr, R=nnr, K=k, D=DE_kcal_mol)
 
 cuvac_reac.calc.prepare_input_files(cuvac_reac)
