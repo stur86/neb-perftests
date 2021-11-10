@@ -1,0 +1,29 @@
+<simulation verbosity='high'>
+  <output prefix='simulation'>
+    <properties stride='1' filename='out'>  [ time{femtosecond}, conserved, temperature{kelvin}, kinetic_cv, potential, pressure_cv{bar} ] </properties>
+    <trajectory stride='1' filename='pos' cell_units='angstrom'> positions{angstrom} </trajectory>
+    <checkpoint stride='20'/>
+  </output>
+  <total_steps>100</total_steps>
+  <prng>
+    <seed>3141</seed>
+  </prng>
+  <ffsocket name='castepdriver' mode='inet'>
+    <address>localhost</address>
+    <port>3141</port>
+    <timeout>100</timeout>
+    <latency> 0.01</latency>
+  </ffsocket>
+  <system>
+    <forces>
+      <force forcefield='castepdriver'/>
+    </forces>
+    <initialize nbeads='1'>
+      <file mode='ase'> CuVacMorse.cell </file>
+    </initialize>
+    <motion mode='minimize'>
+      <optimizer>
+      </optimizer>
+    </motion>
+  </system>
+</simulation>
