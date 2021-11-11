@@ -43,15 +43,25 @@ cuvac_reac.calc = makeMorseCalc()
 cuvac_prod.calc = makeMorseCalc()
 
 dyn = BFGS(cuvac_reac)
-dyn.run(fmax=0.05)
+dyn.run(fmax=1e-3)
 
 dyn = BFGS(cuvac_prod)
-dyn.run(fmax=0.05)
+dyn.run(fmax=1e-3)
 
 # Interpolate
 lgen = linspaceGen(cuvac_reac, cuvac_prod, 3, True)
 images = [im for im in lgen]
 cuvac_intm = images[1]
+
+# run with ASE NEB using ode12r
+from ase.neb import NEB, NEBOptimizer
+
+neb = NEB(images, method='spline')
+for image in neb.images:
+    image.calc = makeMorseCalc()
+
+opt = NEBOptimizer(neb)
+opt.run(fmax=1e-3)
 
 # Now go for CASTEP
 cuvac_reac.calc = Castep(directory='cuvac-neb-morse', label='CuVacMorse')
