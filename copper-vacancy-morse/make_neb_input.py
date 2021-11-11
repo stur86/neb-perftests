@@ -39,14 +39,22 @@ cuvac_prod[i2vac].position = p1vac
 def makeMorseCalc():
     return MorsePotential(epsilon=DE, rho0=A, r0=nnr)
 
+# Save an unoptimized copy
+io.write('CuVac-107.cell', cuvac_reac)
+
 cuvac_reac.calc = makeMorseCalc()
 cuvac_prod.calc = makeMorseCalc()
 
 dyn = BFGS(cuvac_reac)
 dyn.run(fmax=1e-3)
 
+print('Reactants converged at energy {0} eV'.format(cuvac_reac.get_potential_energy()))
+
 dyn = BFGS(cuvac_prod)
 dyn.run(fmax=1e-3)
+
+
+print('Products converged at energy {0} eV'.format(cuvac_prod.get_potential_energy()))
 
 # Interpolate
 lgen = linspaceGen(cuvac_reac, cuvac_prod, 3, True)
@@ -68,6 +76,7 @@ cuvac_reac.calc = Castep(directory='cuvac-neb-morse', label='CuVacMorse')
 cuvac_reac.calc.cell.positions_abs_product = cuvac_prod
 cuvac_reac.calc.cell.positions_abs_intermediate = cuvac_intm
 cuvac_reac.calc.cell.fix_com = False
+cuvac_reac.calc.cell.species_pot = [('Cu', '../Cu_C19_LDA_OTF.usp')]
 
 # Morse potential
 
@@ -84,6 +93,6 @@ cuvac_reac.calc.param.tssearch_max_path_points = 5
 cuvac_reac.calc.param.tssearch_force_tol = 1e-3
 cuvac_reac.calc.param.devel_code = """PP=T
 pp: MORS=T MORS_CUT={CR} MORS_R={R} MORS_K={K} MORS_D={D} :endpp
-""".format(CR=2.2*nnr, R=nnr, K=k, D=DE_kcal_mol)
+""".format(CR=2.3*nnr, R=nnr, K=k, D=DE_kcal_mol)
 
 cuvac_reac.calc.prepare_input_files(cuvac_reac)
