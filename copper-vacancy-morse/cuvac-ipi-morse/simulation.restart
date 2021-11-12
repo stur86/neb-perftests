@@ -158,6 +158,9 @@
       </ensemble>
       <motion mode='minimize'>
          <optimizer>
+            <tolerances>
+               <energy>  1.00000000e-06</energy>
+            </tolerances>
             <old_direction shape='(1, 321)'>
              [   0.00000000e+00,   0.00000000e+00,   0.00000000e+00,   0.00000000e+00,   0.00000000e+00, 
                  0.00000000e+00,   0.00000000e+00,   0.00000000e+00,   0.00000000e+00,   0.00000000e+00, 
