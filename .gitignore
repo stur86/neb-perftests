@@ -15,6 +15,7 @@ csub_default.json
 *.usp
 */[0-9][0-9][0-9][0-9][0-9][0-9].log
 aluminium-adatom/alau-cconv/AlAu_cconv_in/*/[0-9][0-9][0-9][0-9][0-9][0-9].log
+!copper-vacancy-morse/Cu_C19_LDA_OTF.usp
 
 # Jupyter Notebooks
 .ipynb_checkpoints
