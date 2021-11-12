@@ -23,6 +23,9 @@
     </initialize>
     <motion mode='minimize'>
       <optimizer>
+        <tolerances>
+          <energy>1e-6</energy>
+        </tolerances>
       </optimizer>
     </motion>
   </system>
