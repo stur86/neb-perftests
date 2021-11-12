@@ -6,7 +6,7 @@ import numpy as np
 import ase.io
 from ase.build import bulk, make_supercell
 from ase.calculators.castep import Castep
-from ase.calculators.morse import MorsePotential
+from morse import MorsePotential
 from ase.optimize import BFGS
 from soprano.collection.generate import linspaceGen
 from soprano.properties.linkage import LinkageList
