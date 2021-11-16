@@ -7,7 +7,7 @@
 # If stated, this will be automatically processed
 # by ase.io.castep.read_seed()
 # ASE_INTERFACE _build_missing_pspots : True
-# ASE_INTERFACE _castep_command : castep
+# ASE_INTERFACE _castep_command : castep.mpi
 # ASE_INTERFACE _castep_pp_path : /home/phony_stark/Desktop/RAL/eCSE/neb-perftests/copper-vacancy-morse
 # ASE_INTERFACE _check_checkfile : True
 # ASE_INTERFACE _copy_pspots : False
@@ -26,13 +26,13 @@
 #######################################################
 
 TASK: transitionstatesearch
+IPRINT: 2
 TSSEARCH_METHOD: neb
-TSSEARCH_MAX_PATH_POINTS: 1
+TSSEARCH_MAX_PATH_POINTS: 5
 TSSEARCH_FORCE_TOL: 0.001 
-IPRINT: 3
 %BLOCK DEVEL_CODE
 PP=T
-pp: MORS=T MORS_CUT=5.864999999999999 MORS_R=2.55 MORS_K=113.48704575606354 MORS_D=23.060922344650095 :endpp
+pp: MORS=T MORS_CUT=6.885 MORS_R=2.55 MORS_K=113.48704575606354 MORS_D=23.060922344650095 :endpp
 %ENDBLOCK DEVEL_CODE
 
-TSSEARCH_NEB_MAX_ITER: 100
+TSSEARCH_NEB_MAX_ITER: 10
