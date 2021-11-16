@@ -56,22 +56,22 @@
  
  
  
- Compiled for linux_x86_64_ifort on Fri, 08 Oct 2021 16:40:45 +0100
+ Compiled for linux_x86_64_ifort on Mon, 15 Nov 2021 11:53:18 +0000
  from code version 
- 46216fb+  new-neb-implementation  Fri Oct 8 16:33:32 2021 +0100
+ bc31e48+  new-neb-implementation  Mon Nov 15 11:53:07 2021 +0000
  Compiler: Intel Fortran 18.0.3.222; Optimisation: fast
  MATHLIBS: Intel MKL(2018.0.3) (LAPACK version 3.7.0)
  FFT Lib : default
  Fundamental constants values: CODATA 2014
  
- Run started: Fri, 08 Oct 2021 19:59:51 +0100
+ Run started: Mon, 15 Nov 2021 12:35:37 +0000
  
  Atomic calculation performed for Cu: 1s2 2s2 2p6 3s2 3p6 3d10 4s1
  
  Converged in 143 iterations to an ae energy of -45030.712 eV
  
    ============================================================                
-   | Pseudopotential Report - Date of generation  8-10-2021   |                
+   | Pseudopotential Report - Date of generation 15-11-2021   |                
    ------------------------------------------------------------                
    | Element: Cu Ionic charge: 11.00 Level of theory: PBE     |                
    | Atomic Solver: Koelling-Harmon                           |                
@@ -101,7 +101,7 @@
  
  Pseudo atomic calculation performed for Cu 3d10 4s1
  
- Converged in 49 iterations to a total energy of -1676.8615 eV
+ Converged in 49 iterations to a total energy of -1676.8614 eV
  Calculation parallelised over 64 processes.
  Data is distributed by G-vector(2-way) and k-point(32-way)
 
@@ -126,6 +126,7 @@
  write extra output files                       : on
  write final potential to formatted file        : off
  write final density to formatted file          : off
+ write structure in CELL formatted file         : on
  write BibTeX reference list                    : on
  write OTFG pseudopotential files               : on
  write electrostatic potential file             : on
@@ -152,7 +153,7 @@
  output    efield chi2 unit                     : pm/V
   
  wavefunctions paging                           : none
- random number generator seed                   : randomised (195951329)
+ random number generator seed                   : randomised (123537279)
  data distribution                              : optimal for this architecture
  optimization strategy                          : balance speed and memory
 
@@ -195,7 +196,7 @@
  eigen-energy convergence tolerance             : 0.1000E-05   eV
  max force / atom convergence tol.              : ignored
  convergence tolerance window                   :          3   cycles
- max. number of SCF cycles                      :        100
+ max. number of SCF cycles                      :        200
  number of fixed-spin iterations                :         10
  smearing scheme                                : Gaussian
  smearing width                                 : 0.2000       eV
@@ -206,7 +207,7 @@
   
  density-mixing scheme                          : Broyden
  max. length of mixing history                  :         20
- charge density mixing amplitude                : 0.8000    
+ charge density mixing amplitude                : 0.5000    
    spin density mixing amplitude                :  2.000    
  cut-off energy for mixing                      :  500.0       eV
 
@@ -223,7 +224,7 @@
  max. ionic |energy| tolerance                  : 0.2000E-04   eV
  NEB method                                     : ODE12R    
  max. number of NEB iterations                  :        100
- max. number of path points                     :          5
+ max. number of path points                     :         11
  inter-bead spring constant                     : 0.1000       eV/A**2
  tangent mode                                   : SPLINE    
  central bead is                                : climbing up
@@ -381,13 +382,13 @@
   
 +---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
 |                                                     Memory          Disk    |
-| Baseline code, static data and system overhead      518.0 MB         0.0 MB |
+| Baseline code, static data and system overhead      538.0 MB         0.0 MB |
 | BLAS internal memory storage                          0.0 MB         0.0 MB |
 | Model and support data                              175.5 MB       147.5 MB |
 | Electronic energy minimisation requirements         134.9 MB         0.0 MB |
 | Force calculation requirements                       12.6 MB         0.0 MB |
 |                                               ----------------------------- |
-| Approx. total storage required per process          828.4 MB       147.5 MB |
+| Approx. total storage required per process          848.4 MB       147.5 MB |
 |                                                                             |
 | Requirements will fluctuate during execution and may exceed these estimates |
 +-----------------------------------------------------------------------------+
@@ -400,35 +401,31 @@ Calculating total energy with cut-off of  500.000 eV.
 SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
                                energy          per atom          (sec)   <-- SCF
 ------------------------------------------------------------------------ <-- SCF
-Initial  -5.30529447E+004  0.00000000E+000                        36.61  <-- SCF
-      1  -5.21055659E+004  4.22265948E+000  -3.05606060E+001      54.02  <-- SCF
-      2  -5.21074225E+004  4.28393790E+000   5.98896672E-002      72.51  <-- SCF
-      3  -5.21080357E+004  4.32080973E+000   1.97819214E-002      87.21  <-- SCF
-      4  -5.21083014E+004  4.11870036E+000   8.56976571E-003     101.71  <-- SCF
-      5  -5.21078136E+004  4.12354877E+000  -1.57365127E-002     116.13  <-- SCF
-      6  -5.21082481E+004  4.26327631E+000   1.40162344E-002     130.53  <-- SCF
-      7  -5.21077941E+004  4.21676874E+000  -1.46429133E-002     144.99  <-- SCF
-      8  -5.21078700E+004  4.18216120E+000   2.44813556E-003     159.54  <-- SCF
-      9  -5.21077630E+004  4.19161893E+000  -3.45387258E-003     174.09  <-- SCF
-     10  -5.21077647E+004  4.18381934E+000   5.57847273E-005     188.58  <-- SCF
-     11  -5.21077902E+004  4.18814169E+000   8.23426796E-004     203.07  <-- SCF
-     12  -5.21077705E+004  4.18507397E+000  -6.36944983E-004     217.38  <-- SCF
-     13  -5.21077705E+004  4.18394833E+000  -4.44077906E-010     232.08  <-- SCF
-     14  -5.21077701E+004  4.18595431E+000  -1.12302934E-005     246.44  <-- SCF
-     15  -5.21077718E+004  4.18441200E+000   5.42996472E-005     260.79  <-- SCF
-     16  -5.21077692E+004  4.18424583E+000  -8.52009444E-005     274.94  <-- SCF
-     17  -5.21077693E+004  4.18629246E+000   3.31483221E-006     284.87  <-- SCF
-     18  -5.21077692E+004  4.18461294E+000  -1.16087593E-006     294.81  <-- SCF
+Initial  -5.30523546E+004  0.00000000E+000                        36.04  <-- SCF
+      1  -5.21055673E+004  4.22554478E+000  -3.05415249E+001      49.60  <-- SCF
+      2  -5.21074225E+004  4.28503526E+000   5.98440948E-002      68.73  <-- SCF
+      3  -5.21079519E+004  4.30070615E+000   1.70796996E-002      81.80  <-- SCF
+      4  -5.21078972E+004  4.17402609E+000  -1.76565370E-003      93.50  <-- SCF
+      5  -5.21077525E+004  4.16591046E+000  -4.66879319E-003     104.99  <-- SCF
+      6  -5.21077610E+004  4.19559473E+000   2.76644988E-004     116.64  <-- SCF
+      7  -5.21077291E+004  4.18897715E+000  -1.02981756E-003     128.12  <-- SCF
+      8  -5.21077280E+004  4.18480269E+000  -3.48432816E-005     140.02  <-- SCF
+      9  -5.21077278E+004  4.18585199E+000  -7.45584890E-006     155.97  <-- SCF
+     10  -5.21077614E+004  4.18442211E+000   1.08282633E-003     169.17  <-- SCF
+     11  -5.21077625E+004  4.18537368E+000   3.49729699E-005     180.83  <-- SCF
+     12  -5.21077671E+004  4.18489378E+000   1.48577439E-004     191.72  <-- SCF
+     13  -5.21077671E+004  4.18497758E+000   9.20437383E-007     200.99  <-- SCF
+     14  -5.21077671E+004  4.18495048E+000   2.25286211E-007     211.64  <-- SCF
 ------------------------------------------------------------------------ <-- SCF
  
-Integrated Spin Density     =   -0.138328E-02 hbar/2                        
-Integrated |Spin Density|   =    0.378955E-02 hbar/2                        
+Integrated Spin Density     =   -0.285078E-02 hbar/2                        
+Integrated |Spin Density|   =    0.116292E-01 hbar/2                        
  
-Final energy, E             =  -52107.55641697     eV
-Final free energy (E-TS)    =  -52107.76923385     eV
+Final energy, E             =  -52107.55424540     eV
+Final free energy (E-TS)    =  -52107.76709508     eV
 (energies not corrected for finite basis set)
  
-NB est. 0K energy (E-0.5TS)      =  -52107.66282541     eV
+NB est. 0K energy (E-0.5TS)      =  -52107.66067024     eV
  
 
 Writing analysis data to CuVac.castep_bin
@@ -452,9 +449,9 @@ Tangent mode:     Spline interpolation
      Fixed            0  degrees of freedom
      Using            0  Lagrange multipliers
  
-Using climbing image:        3
- Reactant structure energy:   -52107.7692295506       eV
- Product structure energy:   -52107.7692514767       eV
+Using climbing image:        6
+ Reactant structure energy:   -52107.7670993283       eV
+ Product structure energy:   -52107.7671219611       eV
  
  *********************** 
      Iteration:     1
@@ -462,8 +459,8 @@ Using climbing image:        3
  *********************** 
  *********************** 
      Iteration:     2
-         Max Force Component:             0.304060 eV/Ang (0)
-         Max Displacement Component:      0.108661 Ang (0)
+         Max Force Component:             0.638518 eV/Ang (0)
+         Max Displacement Component:      0.168533 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -473,14 +470,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     3
-         Max Force Component:             0.255950 eV/Ang (0)
-         Max Displacement Component:      0.013765 Ang (0)
+         Max Force Component:             0.250129 eV/Ang (0)
+         Max Displacement Component:      0.035417 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:     4
-         Max Force Component:             0.146879 eV/Ang (0)
-         Max Displacement Component:      0.025313 Ang (0)
+         Max Force Component:             0.134985 eV/Ang (0)
+         Max Displacement Component:      0.019025 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -490,14 +487,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     5
-         Max Force Component:             0.084417 eV/Ang (0)
-         Max Displacement Component:      0.018784 Ang (0)
+         Max Force Component:             0.076767 eV/Ang (0)
+         Max Displacement Component:      0.014769 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:     6
-         Max Force Component:             0.061863 eV/Ang (0)
-         Max Displacement Component:      0.015589 Ang (0)
+         Max Force Component:             0.062567 eV/Ang (0)
+         Max Displacement Component:      0.015851 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -507,14 +504,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     7
-         Max Force Component:             0.058995 eV/Ang (0)
-         Max Displacement Component:      0.012398 Ang (0)
+         Max Force Component:             0.049991 eV/Ang (1)
+         Max Displacement Component:      0.014462 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:     8
-         Max Force Component:             0.053326 eV/Ang (0)
-         Max Displacement Component:      0.004627 Ang (0)
+         Max Force Component:             0.051055 eV/Ang (0)
+         Max Displacement Component:      0.007652 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -524,14 +521,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     9
-         Max Force Component:             0.053529 eV/Ang (0)
-         Max Displacement Component:      0.003355 Ang (0)
+         Max Force Component:             0.049229 eV/Ang (1)
+         Max Displacement Component:      0.003928 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:    10
-         Max Force Component:             0.058091 eV/Ang (0)
-         Max Displacement Component:      0.013470 Ang (0)
+         Max Force Component:             0.052923 eV/Ang (0)
+         Max Displacement Component:      0.002876 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -541,14 +538,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    11
-         Max Force Component:             0.104312 eV/Ang (0)
-         Max Displacement Component:      0.029585 Ang (0)
+         Max Force Component:             0.051520 eV/Ang (0)
+         Max Displacement Component:      0.002121 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:    12
-         Max Force Component:             0.186196 eV/Ang (0)
-         Max Displacement Component:      0.055054 Ang (0)
+         Max Force Component:             0.053617 eV/Ang (0)
+         Max Displacement Component:      0.001308 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -558,14 +555,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    13
-         Max Force Component:             0.104312 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (1)
+         Max Force Component:             0.052361 eV/Ang (0)
+         Max Displacement Component:      0.000950 Ang (1)
 
  *********************** 
  *********************** 
      Iteration:    14
-         Max Force Component:             0.135010 eV/Ang (0)
-         Max Displacement Component:      0.022022 Ang (0)
+         Max Force Component:             0.053922 eV/Ang (0)
+         Max Displacement Component:      0.000450 Ang (2)
 
  *********************** 
   Saving model to checkpoint file...
@@ -575,14 +572,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    15
-         Max Force Component:             0.137150 eV/Ang (0)
-         Max Displacement Component:      0.007126 Ang (0)
+         Max Force Component:             0.052631 eV/Ang (0)
+         Max Displacement Component:      0.000237 Ang (3)
 
  *********************** 
  *********************** 
      Iteration:    16
-         Max Force Component:             0.142801 eV/Ang (0)
-         Max Displacement Component:      0.006909 Ang (0)
+         Max Force Component:             0.054001 eV/Ang (0)
+         Max Displacement Component:      0.000104 Ang (4)
 
  *********************** 
   Saving model to checkpoint file...
@@ -592,14 +589,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    17
-         Max Force Component:             0.166510 eV/Ang (0)
-         Max Displacement Component:      0.028776 Ang (0)
+         Max Force Component:             0.052695 eV/Ang (0)
+         Max Displacement Component:      0.000057 Ang (5)
 
  *********************** 
  *********************** 
      Iteration:    18
-         Max Force Component:             0.228835 eV/Ang (0)
-         Max Displacement Component:      0.078666 Ang (0)
+         Max Force Component:             0.054018 eV/Ang (0)
+         Max Displacement Component:      0.000025 Ang (6)
 
  *********************** 
   Saving model to checkpoint file...
@@ -609,14 +606,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    19
-         Max Force Component:             0.251717 eV/Ang (0)
-         Max Displacement Component:      0.027028 Ang (0)
+         Max Force Component:             0.052712 eV/Ang (0)
+         Max Displacement Component:      0.000013 Ang (7)
 
  *********************** 
  *********************** 
      Iteration:    20
-         Max Force Component:             0.323489 eV/Ang (0)
-         Max Displacement Component:      0.082366 Ang (0)
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000006 Ang (8)
 
  *********************** 
   Saving model to checkpoint file...
@@ -626,76 +623,228 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    21
-         Max Force Component:             0.327532 eV/Ang (0)
-         Max Displacement Component:      0.111954 Ang (0)
+         Max Force Component:             0.052713 eV/Ang (0)
+         Max Displacement Component:      0.000003 Ang (9)
 
  *********************** 
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -53825.77528744     eV
-Current free energy (E-TS)  =  -53826.20502257     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -53825.99015501     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
- First optimisation failed; retrying with randomised wavefunction
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -58011.67253907     eV
-Current free energy (E-TS)  =  -58011.93915365     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -58011.80584636     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -57937.93294001     eV
-Current free energy (E-TS)  =  -57938.09383766     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -57938.01338883     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
- First optimisation failed; retrying with randomised wavefunction
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -54955.62957608     eV
-Current free energy (E-TS)  =  -54955.96685661     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -54955.79821634     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -56900.77099247     eV
-Current free energy (E-TS)  =  -56901.05973638     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -56900.91536442     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
- First optimisation failed; retrying with randomised wavefunction
- *Warning* max. SCF cycles performed but system has not reached the groundstate.
-  
-Current total energy, E     =  -56900.35904963     eV
-Current free energy (E-TS)  =  -56900.56063682     eV
-(energies not corrected for finite basis set)
- 
-NB est. 0K energy (E-0.5TS)      =  -56900.45984323     eV
- 
-  ****************************************************************************
-  Warning: electronic minimisation did not converge when finding ground state.
-  ****************************************************************************
+ *********************** 
+     Iteration:    22
+         Max Force Component:             0.054026 eV/Ang (0)
+         Max Displacement Component:      0.000001 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    23
+         Max Force Component:             0.052714 eV/Ang (0)
+         Max Displacement Component:      0.000001 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    24
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    25
+         Max Force Component:             0.052713 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    26
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    27
+         Max Force Component:             0.052715 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    28
+         Max Force Component:             0.054026 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    29
+         Max Force Component:             0.052715 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    30
+         Max Force Component:             0.054028 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    31
+         Max Force Component:             0.052713 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    32
+         Max Force Component:             0.054024 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    33
+         Max Force Component:             0.052714 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    34
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    35
+         Max Force Component:             0.052714 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    36
+         Max Force Component:             0.054028 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    37
+         Max Force Component:             0.052714 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    38
+         Max Force Component:             0.054026 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    39
+         Max Force Component:             0.052713 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    40
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    41
+         Max Force Component:             0.052716 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    42
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    43
+         Max Force Component:             0.052713 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    44
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    45
+         Max Force Component:             0.052714 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+ *********************** 
+     Iteration:    46
+         Max Force Component:             0.054025 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to CuVac.castep_bin
+
+Writing model to CuVac.check
+ *********************** 
+     Iteration:    47
+         Max Force Component:             0.052715 eV/Ang (0)
+         Max Displacement Component:      0.000000 Ang (*)
+
+ *********************** 
