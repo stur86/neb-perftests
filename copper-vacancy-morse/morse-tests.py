@@ -10,7 +10,7 @@ import subprocess as sp
 from ase import io
 from ase.build import bulk, make_supercell
 from ase.calculators.castep import Castep
-from ase.calculators.morse import MorsePotential
+from morse import MorsePotential
 from ase.calculators.socketio import SocketIOCalculator
 from ase.neb import NEB, SingleCalculatorNEB
 from ase.optimize import BFGS
@@ -116,14 +116,17 @@ cuvac_reac.get_potential_energy()
 
 # Read the TS file
 cuvacts = TSFile('CuVacMorse', 'cuvac-neb-morse')
-cuvac_tst = cuvacts.blocks['TST']
+cuvacts_rea = cuvacts.blocks['REA']
+cuvacts_tst = cuvacts.blocks['TST']
+cuvacts_pro = cuvacts.blocks['PRO']
+cuvacts_imgs = cuvacts_rea[0] + cuvacts_tst[cuvac_tst.last_index] + cuvacts_pro[0]
 
-for i, b in enumerate(cuvac_tst[cuvac_tst.last_index]):
+for i, b in enumerate(cuvacts_imgs):
     # Save the atoms
-    io.write('outputs/CuVac-CASTEP-{0}.cell'.format(i+1), b.atoms)
+    io.write('outputs/CuVac-CASTEP-{0}.cell'.format(i), b.atoms)
 # And the energies
-E_tst = cuvac_tst.get_energies(cuvac_tst.last_index)
-np.savetxt('outputs/CuVac-CASTEP-E.dat', E_tst)
+E_castep = [img.atoms.get_potential_energy() for img in cuvacts_imgs]
+np.savetxt('outputs/CuVac-CASTEP-E.dat', E_castep)
 
 # Save the castep calculator, prepare for the ASE NEB
 cast_calc = cuvac_reac.calc
@@ -143,7 +146,15 @@ for image in images[1:-1]:
 # Optimize:
 print('2:  RUNNING ASE NEB TEST')
 optimizer = ODE12r(neb)
-#optimizer.run(fmax=0.04)
+optimizer.run(fmax=0.04)
+
+# And write the files
+for i, a in enumerate(images):
+    # Save the atoms
+    io.write('outputs/CuVac-ASE-{0}.cell'.format(i+1), a)
+# And the energies
+E_ase = [a.get_potential_energy() for a in images]
+np.savetxt('outputs/CuVac-ASE-E.dat', E_ase)
 
 # Now prepare for the socket
 cast_calc.param.task = 'socketdriver'
@@ -185,3 +196,15 @@ optthr.join()
 print('Thread joined')
 proc.kill()
 print('CASTEP process killed')
+
+# And write the files
+for i, a in enumerate(images):
+    # Change back the calculator (for the energy)
+    a.calc = makeMorseCalc()
+    # Save the atoms
+    io.write('outputs/CuVac-SOCKET-{0}.cell'.format(i+1), a)
+# And the energies
+E_skt = [a.get_potential_energy() for a in images]
+np.savetxt('outputs/CuVac-SOCKET-E.dat', E_skt)
+
+
