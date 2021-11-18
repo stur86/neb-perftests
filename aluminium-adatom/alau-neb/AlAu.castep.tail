@@ -1,0 +1,20 @@
+ AlAu.bib
+ 
+Initialisation time =     30.67 s
+Calculation time    =  58404.14 s
+Finalisation time   =      3.45 s
+Total time          =  58438.26 s
+Peak Memory Use     = 2511496 kB
+  
+Overall parallel efficiency rating: Terrible (20%)                              
+  
+Data was distributed by:-
+G-vector (32-way); efficiency rating: Terrible (20%)                            
+k-point (2-way); efficiency rating: Excellent (99%)                             
+  
+Parallel notes:
+1) SMP optimisations were used (num_proc_in_smp=0).                             
+2) k-points were not fully distributed, there were 37 k-points per process.     
+  
+Efficiencies are estimated from the ratio of communication time to total time,
+and do not include all the effects of serial operations or load imbalance.

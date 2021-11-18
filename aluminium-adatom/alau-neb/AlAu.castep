@@ -1,0 +1,877 @@
+ +-------------------------------------------------+
+ |                                                 |
+ |      CCC   AA    SSS  TTTTT  EEEEE  PPPP        |
+ |     C     A  A  S       T    E      P   P       |
+ |     C     AAAA   SS     T    EEE    PPPP        |
+ |     C     A  A     S    T    E      P           |
+ |      CCC  A  A  SSS     T    EEEEE  P           |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ | Welcome to Academic Release CASTEP version 22.1 |          
+ | Ab Initio Total Energy Program                  |
+ |                                                 |
+ | Authors:                                        |
+ | M. Segall, M. Probert, C. Pickard, P. Hasnip,   |
+ | S. Clark, K. Refson, J. R. Yates, M. Payne      |
+ |                                                 |
+ | Contributors:                                   |
+ | P. Lindan, P. Haynes, J. White, V. Milman,      |
+ | N. Govind, M. Gibson, P. Tulip, V. Cocula,      |
+ | B. Montanari, D. Quigley, M. Glover,            |
+ | L. Bernasconi, A. Perlov, M. Plummer,           |
+ | E. McNellis, J. Meyer, J. Gale, D. Jochym       |
+ | J. Aarons, B. Walker, R. Gillen, D. Jones       |
+ | T. Green, I. J. Bush, C. J. Armstrong,          |
+ | E. J. Higgins, E. L. Brown, M. S. McFly,        |
+ | J. Wilkins, B-C. Shih, P. J. P. Byrne,          |
+ | R. J. Maurer, J. C. Womack, J. Dziedzic,        |
+ | A. Bartok-Partay, L. LeBlanc, T. K. Stenczel,   |
+ | J. Kermode, S. Sturniolo                        |
+ |                                                 |
+ | Copyright (c) 2000 - 2021                       |
+ |                                                 |
+ |     Distributed under license from Cambridge    |
+ |     Enterprise for academic use only.           |
+ |                                                 |
+ | Please cite                                     |
+ |                                                 |
+ |     "First principles methods using CASTEP"     |
+ |                                                 |
+ |         Zeitschrift fuer Kristallographie       |
+ |           220(5-6) pp. 567-570 (2005)           |
+ |                                                 |
+ | S. J. Clark, M. D. Segall, C. J. Pickard,       |
+ | P. J. Hasnip, M. J. Probert, K. Refson,         |
+ | M. C. Payne                                     |
+ |                                                 |
+ |       in all publications arising from          |
+ |              your use of CASTEP                 |
+ |                                                 |
+ +-------------------------------------------------+
+ |                                                 |
+ |              http://www.castep.org              |
+ |                                                 |
+ +-------------------------------------------------+
+ 
+ 
+ 
+ Compiled for linux_x86_64_ifort on Mon, 15 Nov 2021 11:53:18 +0000
+ from code version 
+ bc31e48+  new-neb-implementation  Mon Nov 15 11:53:07 2021 +0000
+ Compiler: Intel Fortran 18.0.3.222; Optimisation: fast
+ MATHLIBS: Intel MKL(2018.0.3) (LAPACK version 3.7.0)
+ FFT Lib : default
+ Fundamental constants values: CODATA 2014
+ 
+ Run started: Mon, 15 Nov 2021 12:48:43 +0000
+ 
+ Atomic calculation performed for Al: 1s2 2s2 2p6 3s2 3p1
+ 
+ Converged in 54 iterations to an ae energy of -6603.783 eV
+ 
+   ============================================================                
+   | Pseudopotential Report - Date of generation 15-11-2021   |                
+   ------------------------------------------------------------                
+   | Element: Al Ionic charge:  3.00 Level of theory: PBE     |                
+   | Atomic Solver: Koelling-Harmon                           |                
+   |                                                          |                
+   |               Reference Electronic Structure             |                
+   |         Orbital         Occupation         Energy        |                
+   |            3s              2.000           -0.285        |                
+   |            3p              1.000           -0.100        |                
+   |                                                          |                
+   |                 Pseudopotential Definition               |                
+   |        Beta     l      e      Rc     scheme   norm       |                
+   |          1      0   -0.285   2.192     qc      0         |                
+   |          2      0    0.250   2.192     qc      0         |                
+   |          3      1   -0.100   2.192     qc      0         |                
+   |          4      1    0.250   2.192     qc      0         |                
+   |          5      2    0.000   2.000     qc      0         |                
+   |          6      2    0.250   2.000     qc      0         |                
+   |         loc     3    0.000   2.192     pn      0         |                
+   |                                                          |                
+   | Augmentation charge Rinner = 1.398                       |                
+   | Partial core correction Rc = 1.398                       |                
+   ------------------------------------------------------------                
+   | "3|2.2|2.2|1.4|4|5|5|30:31:32U2U2"                       |                
+   ------------------------------------------------------------                
+   |      Author: Chris J. Pickard, Cambridge University      |                
+   ============================================================                
+ 
+ Atomic calculation performed for Au:
+ 1s2 2s2 2p6 3s2 3p6 3d10 4s2 4p6 4d10 4f14 5s2 5p6 5d10 6s1
+ 
+ Converged in 95 iterations to an ae energy of -517336.889 eV
+ 
+   ============================================================                
+   | Pseudopotential Report - Date of generation 15-11-2021   |                
+   ------------------------------------------------------------                
+   | Element: Au Ionic charge: 33.00 Level of theory: PBE     |                
+   | Atomic Solver: Koelling-Harmon                           |                
+   |                                                          |                
+   |               Reference Electronic Structure             |                
+   |         Orbital         Occupation         Energy        |                
+   |            5s              2.000           -3.982        |                
+   |            4f             14.000           -2.981        |                
+   |            5p              6.000           -2.197        |                
+   |            5d             10.000           -0.253        |                
+   |            6s              1.000           -0.212        |                
+   |                                                          |                
+   |                 Pseudopotential Definition               |                
+   |        Beta     l      e      Rc     scheme   norm       |                
+   |          1      0   -3.982   2.392     qc      0         |                
+   |          2      0   -0.212   2.392     qc      0         |                
+   |          3      0    0.250   2.392     qc      0         |                
+   |          4      1   -2.197   2.392     qc      0         |                
+   |          5      1    0.250   2.392     qc      0         |                
+   |          6      2   -0.253   2.392     qc      0         |                
+   |          7      2    0.250   2.392     qc      0         |                
+   |          8      3   -2.981   2.392     qc      0         |                
+   |          9      3    0.250   2.392     qc      0         |                
+   |         loc     3    0.000   2.392     pn      0         |                
+   |                                                          |                
+   | Augmentation charge Rinner = 1.686                       |                
+   | Partial core correction Rc = 1.686                       |                
+   ------------------------------------------------------------                
+   | "3|2.4|9|10|11|50U:60:51:52:43(qc=6)"                    |                
+   ------------------------------------------------------------                
+   |      Author: Chris J. Pickard, Cambridge University      |                
+   ============================================================                
+ 
+ Pseudo atomic calculation performed for Al 3s2 3p1
+ 
+ Converged in 14 iterations to a total energy of -107.1300 eV
+ 
+ Pseudo atomic calculation performed for Au 4f14 5s2 5p6 5d10 6s1
+ 
+ Converged in 33 iterations to a total energy of -14122.6592 eV
+ Calculation parallelised over 64 processes.
+ Data is distributed by G-vector(32-way) and k-point(2-way)
+
+ ************************************ Title ************************************
+ 
+
+ ***************************** General Parameters ******************************
+  
+ output verbosity                               : normal  (1)
+ write checkpoint data to                       : AlAu.check
+ type of calculation                            : transition state search
+ stress calculation                             : off
+ density difference calculation                 : off
+ electron localisation func (ELF) calculation   : off
+ Hirshfeld analysis                             : off
+ polarisation (Berry phase) analysis            : off
+ molecular orbital projected DOS                : off
+ deltaSCF calculation                           : off
+ unlimited duration calculation
+ timing information                             : on
+ memory usage estimate                          : on
+ write extra output files                       : on
+ write final potential to formatted file        : off
+ write final density to formatted file          : off
+ write structure in CELL formatted file         : on
+ write BibTeX reference list                    : on
+ write OTFG pseudopotential files               : on
+ write electrostatic potential file             : on
+ write bands file                               : on
+ checkpoint writing                             : both castep_bin and check files
+  
+ output         length unit                     : A
+ output           mass unit                     : amu
+ output           time unit                     : ps
+ output         charge unit                     : e
+ output           spin unit                     : hbar/2
+ output         energy unit                     : eV
+ output          force unit                     : eV/A
+ output       velocity unit                     : A/ps
+ output       pressure unit                     : GPa
+ output     inv_length unit                     : 1/A
+ output      frequency unit                     : cm-1
+ output force constant unit                     : eV/A**2
+ output         volume unit                     : A**3
+ output   IR intensity unit                     : (D/A)**2/amu
+ output         dipole unit                     : D
+ output         efield unit                     : eV/A/e
+ output        entropy unit                     : J/mol/K
+ output    efield chi2 unit                     : pm/V
+  
+ wavefunctions paging                           : none
+ random number generator seed                   : randomised (124843882)
+ data distribution                              : optimal for this architecture
+ optimization strategy                          : balance speed and memory
+
+ *********************** Exchange-Correlation Parameters ***********************
+  
+ using functional                               : Perdew Burke Ernzerhof
+ relativistic treatment                         : Koelling-Harmon
+ DFT+D: Semi-empirical dispersion correction    : off
+
+ ************************* Pseudopotential Parameters **************************
+  
+ pseudopotential representation                 : reciprocal space
+ <beta|phi> representation                      : reciprocal space
+ spin-orbit coupling                            : off
+
+ **************************** Basis Set Parameters *****************************
+  
+ plane wave basis set cut-off                   :   400.0000   eV
+ size of standard grid                          :     1.7500
+ size of   fine   gmax                          :    17.9311   1/A
+ finite basis set correction                    : none
+
+ **************************** Electronic Parameters ****************************
+  
+ number of  electrons                           :  69.00    
+ net charge of system                           :  0.000    
+ net spin   of system                           :  1.000    
+ number of  up  spins                           :  35.00    
+ number of down spins                           :  34.00    
+ treating system as spin-polarized
+ number of bands                                :         42
+
+ ********************* Electronic Minimization Parameters **********************
+  
+ Method: Treating system as metallic with density mixing treatment of electrons,
+         and number of  SD  steps               :          1
+         and number of  CG  steps               :          4
+  
+ total energy / atom convergence tol.           : 0.1000E-04   eV
+ eigen-energy convergence tolerance             : 0.1000E-05   eV
+ max force / atom convergence tol.              : ignored
+ convergence tolerance window                   :          3   cycles
+ max. number of SCF cycles                      :        100
+ number of fixed-spin iterations                :         10
+ smearing scheme                                : Gaussian
+ smearing width                                 : 0.2000       eV
+ Fermi energy convergence tolerance             : 0.2721E-13   eV
+ periodic dipole correction                     : NONE
+
+ ************************** Density Mixing Parameters **************************
+  
+ density-mixing scheme                          : Broyden
+ max. length of mixing history                  :         20
+ charge density mixing amplitude                : 0.8000    
+   spin density mixing amplitude                :  2.000    
+ cut-off energy for mixing                      :  400.0       eV
+
+ *********************** Population Analysis Parameters ************************
+  
+ Population analysis with cutoff                :  3.000       A
+ Population analysis output                     : summary and pdos components
+
+ ********************* Transition State Search Parameters **********************
+  
+ search method                                  : NEB   
+ max. ionic |force| tolerance                   : 0.5000E-01   eV/A
+ max. ionic |displacement| tolerance            : 0.1000E-02   A
+ max. ionic |energy| tolerance                  : 0.2000E-04   eV
+ NEB method                                     : ODE12R    
+ max. number of NEB iterations                  :        100
+ max. number of path points                     :         11
+ inter-bead spring constant                     : 0.1000       eV/A**2
+ tangent mode                                   : SPLINE    
+ central bead is                                : climbing up
+
+ *******************************************************************************
+  
+ 
+                           -------------------------------
+                                      Unit Cell
+                           -------------------------------
+        Real Lattice(A)                      Reciprocal Lattice(1/A)
+     5.6084130     0.0000000     0.0000000        1.120314304   0.000000000   0.000000000
+     0.0000000     5.6084130     0.0000000        0.000000000   1.120314304   0.000000000
+     0.0000000     0.0000000    13.7500000        0.000000000   0.000000000   0.456958931
+ 
+                       Lattice parameters(A)       Cell Angles
+                    a =      5.608413          alpha =   90.000000
+                    b =      5.608413          beta  =   90.000000
+                    c =     13.750000          gamma =   90.000000
+ 
+                       Current cell volume =           432.496575       A**3
+                                   density =             1.204044   AMU/A**3
+                                           =             1.999363     g/cm^3
+ 
+                           -------------------------------
+                                     Cell Contents
+                           -------------------------------
+                         Total number of ions in cell =   13
+                      Total number of species in cell =    2
+                        Max number of any one species =   12
+ 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x                          Reactant                        x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x  Element    Atom        Fractional coordinates of atoms  x
+            x            Number           u          v          w      x
+            x----------------------------------------------------------x
+            x  Al           1        -0.000206  -0.000206   0.289861   x 
+            x  Al           2         0.500206  -0.000206   0.289861   x 
+            x  Al           3        -0.000206   0.500206   0.289861   x 
+            x  Al           4         0.500206   0.500206   0.289861   x 
+            x  Al           5         0.250000   0.250000   0.438297   x 
+            x  Al           6         0.750000   0.250000   0.438758   x 
+            x  Al           7         0.250000   0.750000   0.438758   x 
+            x  Al           8         0.750000   0.750000   0.437920   x 
+            x  Al           9        -0.002862  -0.002862   0.587039   x 
+            x  Al          10         0.502862  -0.002862   0.587039   x 
+            x  Al          11        -0.002862   0.502862   0.587039   x 
+            x  Al          12         0.502862   0.502862   0.587039   x 
+            x  Au           1         0.250000   0.250000   0.705937   x 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x                          Product                         x
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            x  Element    Atom        Fractional coordinates of atoms  x
+            x            Number           u          v          w      x
+            x----------------------------------------------------------x
+            x  Al           1        -0.000178   0.000357   0.286400   x 
+            x  Al           2         0.500141   0.000357   0.286400   x 
+            x  Al           3        -0.000178   0.499607   0.286400   x 
+            x  Al           4         0.500141   0.499607   0.286400   x 
+            x  Al           5         0.249982   0.249982   0.441018   x 
+            x  Al           6         0.749945   0.249982   0.439927   x 
+            x  Al           7         0.249982   0.749945   0.434473   x 
+            x  Al           8         0.749945   0.749945   0.441164   x 
+            x  Al           9         0.009985   0.989228   0.591127   x 
+            x  Al          10         0.489978   0.989228   0.591127   x 
+            x  Al          11         0.009985   0.510840   0.591127   x 
+            x  Al          12         0.489978   0.510840   0.591127   x 
+            x  Au           1         0.749945   0.249982   0.699345   x 
+            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ 
+ 
+                         No user defined ionic velocities
+ 
+                           -------------------------------
+                                   Details of Species
+                           -------------------------------
+ 
+                               Mass of species in AMU
+                                    Al   26.9815400
+                                    Au  196.9665500
+ 
+                          Electric Quadrupole Moment (Barn)
+                                    Al    0.1466000 Isotope 27
+                                    Au    0.5470000 Isotope197
+ 
+                          Files used for pseudopotentials:
+                                    Al 3|2.2|2.2|1.4|4|5|5|30:31:32U2U2
+                                    Au 3|2.4|9|10|11|50U:60:51:52:43(qc=6)
+ 
+                           -------------------------------
+                              k-Points For BZ Sampling
+                           -------------------------------
+                       MP grid size for SCF calculation is  7  7  3
+                            with an offset of   0.000  0.000  0.000
+                       Number of kpoints used =            74
+ 
+                           -------------------------------
+                               Symmetry and Constraints
+                           -------------------------------
+ 
+                      Maximum deviation from symmetry =  0.00000         ANG
+ 
+                      Number of symmetry operations   =           1
+         There are no ionic constraints specified or generated for this cell
+                      Point group of crystal =     1: C1, 1, 1
+                      Space group of crystal =    99: P4mm, P 4 -2
+ 
+             Set iprint > 1 for details on symmetry rotations/translations
+ 
+                         Centre of mass is NOT constrained
+ 
+                         Number of cell constraints= 0
+                         Cell constraints are:  1 2 3 4 5 6
+ 
+                         External pressure/stress (GPa)
+                          0.00000   0.00000   0.00000
+                                    0.00000   0.00000
+                                              0.00000
+  
++---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
+|                                                     Memory          Disk    |
+| Baseline code, static data and system overhead      541.0 MB         0.0 MB |
+| BLAS internal memory storage                          0.0 MB         0.0 MB |
+| Model and support data                              601.0 MB        37.0 MB |
+| Electronic energy minimisation requirements          31.8 MB         0.0 MB |
+| Force calculation requirements                        1.1 MB         0.0 MB |
+|                                               ----------------------------- |
+| Approx. total storage required per process         1173.8 MB        37.0 MB |
+|                                                                             |
+| Requirements will fluctuate during execution and may exceed these estimates |
++-----------------------------------------------------------------------------+
+Calculating approximate eigenstates for fixed initial Hamiltonian
+Calculating total energy with cut-off of  400.000 eV.
+------------------------------------------------------------------------ <-- SCF
+SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
+                               energy          per atom          (sec)   <-- SCF
+------------------------------------------------------------------------ <-- SCF
+Initial  -1.53522015E+004  0.00000000E+000                        32.13  <-- SCF
+      1  -1.54589785E+004 -9.77345891E-002   8.21361345E+000      50.00  <-- SCF
+      2  -1.54673553E+004 -2.89277988E-001   6.44372234E-001      63.78  <-- SCF
+      3  -1.54623234E+004  3.00378035E-001  -3.87067562E-001      78.45  <-- SCF
+      4  -1.54578384E+004  1.85555182E-002  -3.44998765E-001      95.28  <-- SCF
+      5  -1.54566569E+004  1.16883881E-001  -9.08871046E-002     112.23  <-- SCF
+      6  -1.54562745E+004  2.42439256E-001  -2.94186404E-002     128.58  <-- SCF
+      7  -1.54562784E+004  2.87674916E-001   3.00790069E-004     145.21  <-- SCF
+      8  -1.54562738E+004  3.12022751E-001  -3.49323376E-004     159.66  <-- SCF
+      9  -1.54562651E+004  3.58562253E-001  -6.74187706E-004     172.99  <-- SCF
+     10  -1.54563201E+004  4.60394422E-001   4.23577635E-003     185.50  <-- SCF
+     11  -1.54552003E+004  4.86198594E-001  -8.61436782E-002     196.78  <-- SCF
+     12  -1.54558432E+004  4.93114754E-001   4.94575835E-002     208.13  <-- SCF
+     13  -1.54560392E+004  5.17560452E-001   1.50780334E-002     219.26  <-- SCF
+     14  -1.54562673E+004  5.57042272E-001   1.75460495E-002     230.58  <-- SCF
+     15  -1.54563451E+004  5.76618144E-001   5.98047361E-003     241.92  <-- SCF
+     16  -1.54563480E+004  5.69909810E-001   2.22243213E-004     252.97  <-- SCF
+     17  -1.54563354E+004  5.67192373E-001  -9.65552711E-004     263.40  <-- SCF
+     18  -1.54563373E+004  5.70667206E-001   1.42894573E-004     273.18  <-- SCF
+     19  -1.54563459E+004  5.74391693E-001   6.62515887E-004     282.99  <-- SCF
+     20  -1.54563468E+004  5.73630638E-001   6.75927286E-005     292.26  <-- SCF
+     21  -1.54563469E+004  5.72426765E-001   1.35123918E-005     301.78  <-- SCF
+     22  -1.54563481E+004  5.70680799E-001   8.61553213E-005     311.51  <-- SCF
+     23  -1.54563492E+004  5.68682384E-001   9.13904981E-005     321.97  <-- SCF
+     24  -1.54563494E+004  5.66924294E-001   1.41113413E-005     331.38  <-- SCF
+     25  -1.54563494E+004  5.66810646E-001  -4.31647909E-007     340.14  <-- SCF
+     26  -1.54563494E+004  5.66896333E-001  -2.74938273E-007     348.61  <-- SCF
+------------------------------------------------------------------------ <-- SCF
+ 
+Integrated Spin Density     =   -0.461820E-04 hbar/2                        
+Integrated |Spin Density|   =    0.527109E-03 hbar/2                        
+ 
+Final energy, E             =  -15456.25759134     eV
+Final free energy (E-TS)    =  -15456.34941295     eV
+(energies not corrected for finite basis set)
+ 
+NB est. 0K energy (E-0.5TS)      =  -15456.30350215     eV
+ 
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++ Starting Transition State Search +++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 
+ =====================================================================
+ |                                                                   |
+ |                  Nudged Elastic Band optimization                 |
+ |                                                                   |
+ =====================================================================
+
+     NEB elastic constant:      0.001029 Hartree/Bohr^2
+Optimisation algorithm:     ode12r                                                                                                                                                                                                                                                          
+Tangent mode:     Spline interpolation                                                                                                                                                                                                                                            
+ Number of task farms to use:           1
+  --- Initialising NEB constraints ---
+     Fixed            0  degrees of freedom
+     Using            0  Lagrange multipliers
+ 
+Using climbing image:        6
+ Reactant structure energy:   -15456.3494127829       eV
+ Product structure energy:   -15456.4560203663       eV
+ 
+ *********************** 
+     Iteration:     1
+
+ *********************** 
+ *********************** 
+     Iteration:     2
+         Max Force Component:             1.184601 eV/Ang (0)
+         Max Displacement Component:      0.167963 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:     3
+         Max Force Component:             0.896590 eV/Ang (0)
+         Max Displacement Component:      0.017936 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:     4
+         Max Force Component:             0.407540 eV/Ang (0)
+         Max Displacement Component:      0.042946 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:     5
+         Max Force Component:             0.294508 eV/Ang (0)
+         Max Displacement Component:      0.026296 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:     6
+         Max Force Component:             0.158390 eV/Ang (0)
+         Max Displacement Component:      0.045616 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:     7
+         Max Force Component:             0.108278 eV/Ang (0)
+         Max Displacement Component:      0.029199 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:     8
+         Max Force Component:             0.212034 eV/Ang (0)
+         Max Displacement Component:      0.022946 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:     9
+         Max Force Component:             0.111089 eV/Ang (0)
+         Max Displacement Component:      0.017406 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    10
+         Max Force Component:             0.073626 eV/Ang (0)
+         Max Displacement Component:      0.006491 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    11
+         Max Force Component:             0.070021 eV/Ang (0)
+         Max Displacement Component:      0.004549 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    12
+         Max Force Component:             0.056153 eV/Ang (0)
+         Max Displacement Component:      0.009286 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    13
+         Max Force Component:             0.039430 eV/Ang (1)
+         Max Displacement Component:      0.018542 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    14
+         Max Force Component:             0.097884 eV/Ang (0)
+         Max Displacement Component:      0.010857 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    15
+         Max Force Component:             0.035074 eV/Ang (1)
+         Max Displacement Component:      0.002581 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    16
+         Max Force Component:             0.029968 eV/Ang (2)
+         Max Displacement Component:      0.002212 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    17
+         Max Force Component:             0.034344 eV/Ang (3)
+         Max Displacement Component:      0.002970 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    18
+         Max Force Component:             0.027526 eV/Ang (4)
+         Max Displacement Component:      0.003900 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    19
+         Max Force Component:             0.031474 eV/Ang (5)
+         Max Displacement Component:      0.002703 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    20
+         Max Force Component:             0.025111 eV/Ang (6)
+         Max Displacement Component:      0.001930 Ang (0)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    21
+         Max Force Component:             0.029647 eV/Ang (7)
+         Max Displacement Component:      0.001003 Ang (0)
+
+ *********************** 
+ *********************** 
+     Iteration:    22
+         Max Force Component:             0.024178 eV/Ang (8)
+         Max Displacement Component:      0.000488 Ang (1)
+
+ *********************** 
+  Saving model to checkpoint file...
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ *********************** 
+     Iteration:    23
+         Max Force Component:             0.029487 eV/Ang (9)
+         Max Displacement Component:      0.000337 Ang (2)
+
+ *********************** 
+
+     Convergence achieved in    23 iterations
+ 
+ ************************************** Forces **************************************
+ *                                                                                  *
+ *                           Cartesian components (eV/A)                            *
+ * -------------------------------------------------------------------------------- *
+ *                         x                    y                    z              *
+ *                                                                                  *
+ * Al              1     -0.01603              0.00012              0.00756         *
+ * Al              2     -0.01680             -0.00022             -0.00498         *
+ * Al              3     -0.01603             -0.00011              0.00757         *
+ * Al              4     -0.01680              0.00022             -0.00497         *
+ * Al              5     -0.00144             -0.00001              0.00285         *
+ * Al              6     -0.01034             -0.00001             -0.00112         *
+ * Al              7     -0.00301             -0.00002              0.00259         *
+ * Al              8     -0.01319             -0.00002              0.00004         *
+ * Al              9      0.01287             -0.00219             -0.01775         *
+ * Al             10      0.01188              0.00069              0.01545         *
+ * Al             11      0.01287              0.00222             -0.01775         *
+ * Al             12      0.01188             -0.00066              0.01545         *
+ * Au              1      0.04414             -0.00000             -0.00494         *
+ *                                                                                  *
+ ************************************************************************************
+ 
+ Pseudo atomic calculation performed for Al 3s2 3p1
+ 
+ Converged in 14 iterations to a total energy of -107.1300 eV
+ 
+ Pseudo atomic calculation performed for Au 4f14 5s2 5p6 5d10 6s1
+ 
+ Converged in 33 iterations to a total energy of -14122.6592 eV
+Charge spilling parameter for spin component 1 = 1.05%
+Charge spilling parameter for spin component 2 = 1.04%
+ 
+                   Orbital Populations                  
+  ---------------------------------------------------------------
+     Ion    Atom   Orbital              Up        Down      Spin
+  ---------------------------------------------------------------
+     Al     1      S                    0.667     0.667    -0.000
+     Al     1      Px                   0.291     0.291    -0.000
+     Al     1      Py                   0.292     0.292     0.000
+     Al     1      Pz                   0.231     0.231     0.000
+     Al     2      S                    0.666     0.666     0.000
+     Al     2      Px                   0.293     0.293    -0.000
+     Al     2      Py                   0.292     0.292     0.000
+     Al     2      Pz                   0.233     0.233    -0.000
+     Al     3      S                    0.667     0.667    -0.000
+     Al     3      Px                   0.291     0.291    -0.000
+     Al     3      Py                   0.292     0.292     0.000
+     Al     3      Pz                   0.231     0.231     0.000
+     Al     4      S                    0.666     0.666     0.000
+     Al     4      Px                   0.293     0.293    -0.000
+     Al     4      Py                   0.292     0.292     0.000
+     Al     4      Pz                   0.233     0.233    -0.000
+     Al     5      S                    0.560     0.560    -0.000
+     Al     5      Px                   0.326     0.326    -0.000
+     Al     5      Py                   0.322     0.322     0.000
+     Al     5      Pz                   0.327     0.327     0.000
+     Al     6      S                    0.561     0.561    -0.000
+     Al     6      Px                   0.327     0.327    -0.000
+     Al     6      Py                   0.327     0.327     0.000
+     Al     6      Pz                   0.312     0.312     0.000
+     Al     7      S                    0.561     0.561     0.000
+     Al     7      Px                   0.318     0.318     0.000
+     Al     7      Py                   0.318     0.318     0.000
+     Al     7      Pz                   0.312     0.312     0.000
+     Al     8      S                    0.560     0.560    -0.000
+     Al     8      Px                   0.321     0.321    -0.000
+     Al     8      Py                   0.326     0.326     0.000
+     Al     8      Pz                   0.327     0.327     0.000
+     Al     9      S                    0.631     0.631    -0.000
+     Al     9      Px                   0.306     0.306    -0.000
+     Al     9      Py                   0.307     0.307     0.000
+     Al     9      Pz                   0.278     0.278     0.000
+     Al    10      S                    0.628     0.628     0.000
+     Al    10      Px                   0.310     0.310     0.000
+     Al    10      Py                   0.309     0.309     0.000
+     Al    10      Pz                   0.283     0.283    -0.000
+     Al    11      S                    0.631     0.631    -0.000
+     Al    11      Px                   0.306     0.306    -0.000
+     Al    11      Py                   0.307     0.307     0.000
+     Al    11      Pz                   0.278     0.278     0.000
+     Al    12      S                    0.628     0.628     0.000
+     Al    12      Px                   0.310     0.310     0.000
+     Al    12      Py                   0.309     0.309     0.000
+     Al    12      Pz                   0.283     0.283    -0.000
+     Au     1      S                    1.000     1.000     0.000
+     Au     1      Fxxx                 1.000     1.000    -0.000
+     Au     1      Fyyy                 1.000     1.000    -0.000
+     Au     1      Fzzz                 1.000     1.000     0.000
+     Au     1      Fxyz                 1.000     1.000    -0.000
+     Au     1      Fz(xx-yy)            1.000     1.000    -0.000
+     Au     1      Fy(zz-xx)            1.000     1.000    -0.000
+     Au     1      Fx(yy-zz)            1.000     1.000     0.000
+     Au     1      Px                   1.000     1.000    -0.000
+     Au     1      Py                   1.000     1.000    -0.000
+     Au     1      Pz                   1.000     1.000     0.000
+     Au     1      Dzz                  0.986     0.987    -0.000
+     Au     1      Dzy                  0.966     0.967    -0.000
+     Au     1      Dzx                  0.967     0.967     0.000
+     Au     1      Dxx-yy               0.978     0.978    -0.000
+     Au     1      Dxy                  0.948     0.947     0.000
+     Au     1      S                    0.519     0.519     0.000
+  ---------------------------------------------------------------
+                           Total:      34.499    34.500    -0.000
+  ---------------------------------------------------------------
+ 
+     Atomic Populations (Mulliken)
+     -----------------------------
+Species          Ion Spin      s       p       d       f      Total   Charge(e)   Spin(hbar/2)
+==============================================================================================
+  Al              1   up:     0.667   0.814   0.000   0.000   1.481     0.038        0.000
+                  1   dn:     0.667   0.814   0.000   0.000   1.481
+  Al              2   up:     0.666   0.817   0.000   0.000   1.483     0.033        0.000
+                  2   dn:     0.666   0.817   0.000   0.000   1.483
+  Al              3   up:     0.667   0.814   0.000   0.000   1.481     0.038        0.000
+                  3   dn:     0.667   0.814   0.000   0.000   1.481
+  Al              4   up:     0.666   0.817   0.000   0.000   1.483     0.033        0.000
+                  4   dn:     0.666   0.817   0.000   0.000   1.483
+  Al              5   up:     0.560   0.975   0.000   0.000   1.535    -0.069       -0.000
+                  5   dn:     0.560   0.975   0.000   0.000   1.535
+  Al              6   up:     0.561   0.966   0.000   0.000   1.526    -0.052       -0.000
+                  6   dn:     0.561   0.965   0.000   0.000   1.526
+  Al              7   up:     0.561   0.948   0.000   0.000   1.509    -0.019        0.000
+                  7   dn:     0.561   0.948   0.000   0.000   1.509
+  Al              8   up:     0.560   0.975   0.000   0.000   1.535    -0.069       -0.000
+                  8   dn:     0.560   0.975   0.000   0.000   1.535
+  Al              9   up:     0.631   0.891   0.000   0.000   1.522    -0.044        0.000
+                  9   dn:     0.631   0.890   0.000   0.000   1.522
+  Al             10   up:     0.628   0.901   0.000   0.000   1.529    -0.058        0.000
+                 10   dn:     0.628   0.901   0.000   0.000   1.529
+  Al             11   up:     0.631   0.891   0.000   0.000   1.522    -0.044        0.000
+                 11   dn:     0.631   0.890   0.000   0.000   1.522
+  Al             12   up:     0.628   0.901   0.000   0.000   1.529    -0.058        0.000
+                 12   dn:     0.628   0.901   0.000   0.000   1.529
+  Au              1   up:     1.519   3.000   4.845   7.000  16.364     0.272       -0.000
+                  1   dn:     1.519   3.000   4.845   7.000  16.364
+==============================================================================================
+ 
+                 Bond                   Population        Spin       Length (A)
+================================================================================
+             Al 12 -- Au 1                   0.03        -0.00          2.54138
+             Al 10 -- Au 1                   0.03        -0.00          2.54138
+             Al 11 -- Au 1                   0.03         0.00          2.55248
+             Al 9  -- Au 1                   0.03         0.00          2.55249
+             Al 10 -- Al 12                  0.79         0.00          2.68170
+             Al 11 -- Al 12                  0.80        -0.00          2.68398
+             Al 9  -- Al 10                  0.80        -0.00          2.68398
+             Al 9  -- Al 11                  0.80         0.00          2.68969
+             Al 5  -- Al 6                   0.74         0.00          2.79429
+             Al 1  -- Al 2                   0.91         0.00          2.79751
+             Al 3  -- Al 4                   0.91         0.00          2.79751
+             Al 1  -- Al 3                   0.91         0.00          2.79808
+             Al 2  -- Al 4                   0.91        -0.00          2.79811
+             Al 7  -- Al 8                   0.66        -0.00          2.79817
+             Al 6  -- Al 8                   0.74         0.00          2.80423
+             Al 5  -- Al 7                   0.66         0.00          2.80587
+             Al 1  -- Al 7                  -0.03        -0.00          2.82643
+             Al 3  -- Al 7                  -0.03        -0.00          2.82644
+             Al 5  -- Al 10                  0.02         0.00          2.83937
+             Al 5  -- Al 12                  0.02         0.00          2.83937
+             Al 7  -- Al 12                 -0.05         0.00          2.84773
+             Al 7  -- Al 10                 -0.05         0.00          2.84773
+             Al 2  -- Al 7                  -0.06        -0.00          2.84935
+             Al 4  -- Al 7                  -0.06        -0.00          2.84937
+             Al 8  -- Al 11                  0.02         0.00          2.85166
+             Al 8  -- Al 9                   0.02         0.00          2.85167
+             Al 4  -- Al 6                  -0.04        -0.00          2.87590
+             Al 2  -- Al 6                  -0.04        -0.00          2.87591
+             Al 8  -- Al 10                 -0.03        -0.00          2.87617
+             Al 8  -- Al 12                 -0.03        -0.00          2.87617
+             Al 2  -- Al 8                  -0.05        -0.00          2.88790
+             Al 4  -- Al 8                  -0.05        -0.00          2.88792
+             Al 5  -- Al 9                  -0.02         0.00          2.89042
+             Al 5  -- Al 11                 -0.02         0.00          2.89043
+             Al 3  -- Al 5                  -0.05        -0.00          2.89109
+             Al 1  -- Al 5                  -0.05        -0.00          2.89110
+             Al 7  -- Al 11                 -0.11        -0.00          2.90865
+             Al 7  -- Al 9                  -0.11        -0.00          2.90865
+             Al 6  -- Al 9                   0.03         0.00          2.91633
+             Al 6  -- Al 11                  0.03         0.00          2.91633
+             Al 3  -- Al 6                  -0.08        -0.00          2.91640
+             Al 1  -- Al 6                  -0.08        -0.00          2.91641
+             Al 4  -- Al 5                  -0.08         0.00          2.91838
+             Al 2  -- Al 5                  -0.08         0.00          2.91839
+             Al 1  -- Al 8                  -0.08         0.00          2.92500
+             Al 3  -- Al 8                  -0.08         0.00          2.92501
+             Al 6  -- Al 10                 -0.00        -0.00          2.94056
+             Al 6  -- Al 12                 -0.00        -0.00          2.94057
+================================================================================
+ 
+
+Writing analysis data to AlAu.castep_bin
+
+Writing model to AlAu.check
+ 
+ A BibTeX formatted list of references used in this run has been written to 
+ AlAu.bib
+ 
+Initialisation time =     26.39 s
+Calculation time    =  32647.25 s
+Finalisation time   =      4.37 s
+Total time          =  32678.02 s
+Peak Memory Use     = 2521908 kB
+  
+Overall parallel efficiency rating: Terrible (31%)                              
+  
+Data was distributed by:-
+G-vector (32-way); efficiency rating: Terrible (31%)                            
+k-point (2-way); efficiency rating: Excellent (98%)                             

@@ -1,0 +1,5 @@
+First SCF: 649.57 s
+Path points: 11
+Iterations: 22
+Calculation time: 58404.14 s
+NEB time per calculation: 237.67 s (22 Iterations * 11 Images + 1 Products)
