@@ -1,0 +1,10 @@
+# column   1     --> time{femtosecond} : The elapsed simulation time.
+# column   2     --> conserved : The value of the conserved energy quantity per bead.
+# column   3     --> temperature{kelvin} : The current temperature, as obtained from the MD kinetic energy.
+# column   4     --> kinetic_cv : The centroid-virial quantum kinetic energy of the physical system.
+# column   5     --> potential : The physical system potential energy.
+# column   6     --> pressure_cv{bar} : The quantum estimator for pressure of the physical system.
+    0.00000000e+00     1.18138861e+02     2.95116507e+03     1.60500000e+02     1.18138861e+02     7.55673330e+05   
+    0.00000000e+00     1.17322138e+02     2.95116507e+03     1.60500000e+02     1.17322138e+02     7.46520933e+05   
+    0.00000000e+00     1.17320989e+02     2.95116507e+03     1.60500000e+02     1.17320989e+02     7.46661375e+05   
+    0.00000000e+00     1.17319904e+02     2.95116507e+03     1.60500000e+02     1.17319904e+02     7.46790478e+05   

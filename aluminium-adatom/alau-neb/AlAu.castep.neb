@@ -1,0 +1,219 @@
+     Iteration:     1
+
+ *********************** 
+ ODE12R: first step
+         New dt =    1.31658897524820       Rk =   0.120093579682765       Ek = 
+  6.378777678126971E-003
+         dt_o12 =   0.197970860796844       dt_ls =   1.797693134862316E+308
+ Performing sweep for pass            2
+ Farm            1 solving structures from           11  to            1  (dir: 
+--
+     Iteration:     2
+         Max Force Component:             2.924760 eV/Ang (0)
+         Max Displacement Component:      0.088883 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =   0.974466873421556       Rk =   5.687753252363442E-002  Ek = 
+  4.563586395500980E-002
+         dt_o12 =   0.974466873421556       dt_ls =    2.48780185043104     
+--
+     Iteration:     3
+         Max Force Component:             2.136475 eV/Ang (0)
+         Max Displacement Component:      0.030038 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    1.76003722733019       Rk =   4.154781912139439E-002  Ek = 
+  7.663558219285829E-003
+         dt_o12 =    1.76003722733019       dt_ls =    3.29374724535298     
+--
+     Iteration:     4
+         Max Force Component:             1.312623 eV/Ang (0)
+         Max Displacement Component:      0.039604 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    2.30047784802871       Rk =   2.552646180352892E-002  Ek = 
+  1.463347955260290E-002
+         dt_o12 =    2.30047784802871       dt_ls =    3.85897360171701     
+--
+     Iteration:     5
+         Max Force Component:             0.802780 eV/Ang (0)
+         Max Displacement Component:      0.031522 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    3.39457974552360       Rk =   1.561159090468919E-002  Ek = 
+  1.148164431330650E-002
+         dt_o12 =    3.39457974552360       dt_ls =    4.73113192805204     
+--
+     Iteration:     6
+         Max Force Component:             0.481252 eV/Ang (0)
+         Max Displacement Component:      0.028583 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    5.17962942027129       Rk =   9.358854022853417E-003  Ek = 
+  1.073778395923782E-002
+         dt_o12 =    5.17962942027129       dt_ls =    6.54460895245791     
+--
+     Iteration:     7
+         Max Force Component:             0.294992 eV/Ang (0)
+         Max Displacement Component:      0.026273 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    8.45570851208329       Rk =   5.736685213750856E-003  Ek = 
+  9.380746064408325E-003
+         dt_o12 =    8.45570851208329       dt_ls =    12.6419183034001     
+--
+     Iteration:     8
+         Max Force Component:             0.201223 eV/Ang (0)
+         Max Displacement Component:      0.027155 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    13.6651757745218       Rk =   3.913172447644357E-003  Ek = 
+  9.572151656783413E-003
+         dt_o12 =    13.6651757745218       dt_ls =    19.1293978564991     
+--
+     Iteration:     9
+         Max Force Component:             0.140922 eV/Ang (0)
+         Max Displacement Component:      0.028297 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    17.8867497521706       Rk =   2.740487311901804E-003  Ek = 
+  1.459175709651497E-002
+         dt_o12 =    17.8867497521706       dt_ls =    25.9646623873037     
+--
+     Iteration:    10
+         Max Force Component:             0.099070 eV/Ang (0)
+         Max Displacement Component:      0.025939 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    24.4164613733359       Rk =   1.926596094638175E-003  Ek = 
+  1.341644408566466E-002
+         dt_o12 =    24.4164613733359       dt_ls =    28.4755692280356     
+--
+     Iteration:    11
+         Max Force Component:             0.139874 eV/Ang (0)
+         Max Displacement Component:      0.024893 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    12.0370307735802       Rk =   2.720107823503946E-003  Ek = 
+  3.550345278430059E-002
+         dt_o12 =    20.4888428562031       dt_ls =    12.0370307735802     
+--
+     Iteration:    12
+         Max Force Component:             0.126108 eV/Ang (0)
+         Max Displacement Component:      0.017326 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    5.87808659127700       Rk =   2.452411736338879E-003  Ek = 
+  2.364485891229770E-002
+         dt_o12 =    12.3771601875270       dt_ls =    5.87808659127700     
+--
+     Iteration:    13
+         Max Force Component:             0.057826 eV/Ang (0)
+         Max Displacement Component:      0.007628 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    5.75709115916204       Rk =   1.124545009749465E-003  Ek = 
+  7.149863356689735E-003
+         dt_o12 =    10.9915037606019       dt_ls =    5.75709115916204     
+--
+     Iteration:    14
+         Max Force Component:             0.052965 eV/Ang (0)
+         Max Displacement Component:      0.003426 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    9.99341528617486       Rk =   1.030004246956394E-003  Ek = 
+  1.058058818484130E-003
+         dt_o12 =    27.9845420904814       dt_ls =    9.99341528617486     
+--
+     Iteration:    15
+         Max Force Component:             0.041805 eV/Ang (1)
+         Max Displacement Component:      0.005447 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    25.1219014527571       Rk =   8.129852295855297E-004  Ek = 
+  1.608938881971664E-003
+         dt_o12 =    39.3925564577824       dt_ls =    25.1219014527571     
+--
+     Iteration:    16
+         Max Force Component:             0.035174 eV/Ang (2)
+         Max Displacement Component:      0.010808 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    27.0515224808023       Rk =   6.840311183283685E-004  Ek = 
+  6.770400534636786E-003
+         dt_o12 =    48.2742272904609       dt_ls =    27.0515224808023     
+--
+     Iteration:    17
+         Max Force Component:             0.044432 eV/Ang (3)
+         Max Displacement Component:      0.009792 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    7.90748311145846       Rk =   8.640585739634071E-004  Ek = 
+  1.603651836549680E-002
+         dt_o12 =    33.7758800717745       dt_ls =    7.90748311145846     
+--
+     Iteration:    18
+         Max Force Component:             0.031141 eV/Ang (4)
+         Max Displacement Component:      0.003616 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    5.56004520053281       Rk =   6.055994158164340E-004  Ek = 
+  4.920655154586447E-003
+         dt_o12 =    17.8236568476702       dt_ls =    5.56004520053281     
+--
+     Iteration:    19
+         Max Force Component:             0.027443 eV/Ang (5)
+         Max Displacement Component:      0.001782 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    4.91227025159495       Rk =   5.336812746529299E-004  Ek = 
+  1.336045579826753E-003
+         dt_o12 =    24.0512520303597       dt_ls =    4.91227025159495     
+--
+     Iteration:    20
+         Max Force Component:             0.034128 eV/Ang (6)
+         Max Displacement Component:      0.001387 Ang (0)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    1.52691171188677       Rk =   6.636789799058693E-004  Ek = 
+  8.451543692028355E-004
+         dt_o12 =    26.7167874651882       dt_ls =    1.52691171188677     
+--
+     Iteration:    21
+         Max Force Component:             0.033474 eV/Ang (7)
+         Max Displacement Component:      0.000536 Ang (1)
+
+ *********************** 
+ ODE12R: previous step accepted
+         New dt =    1.09557200102040       Rk =   6.509717690948105E-004  Ek = 
+  2.408294840145032E-004
+         dt_o12 =    15.5571164669417       dt_ls =    1.09557200102040     
+--
+     Iteration:    22
+         Max Force Component:             0.027063 eV/Ang (8)
+         Max Displacement Component:      0.000377 Ang (2)
+
+ *********************** 
+
+     Convergence achieved in    22 iterations
+ 
+ ************************************** Forces **************************************
