@@ -14,7 +14,7 @@
 # Setup the batch environment
 module load epcc-job-env
 
-CASTEP=~/castep/obj/linux_x86_64_cray-XT--mpi/castep.mpi
+CASTEP=/work/ecseab04/ecseab04/stur86/castep.mpi
 
 # srun launches the parallel program based on the SBATCH options
 srun --distribution=block:block --hint=nomultithread $CASTEP initial
