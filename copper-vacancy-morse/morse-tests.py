@@ -85,11 +85,12 @@ castep_cmd = 'castep.mpi'
 if len(sys.argv) > 1:
     castep_cmd = sys.argv[1]
 
-cuvac_reac.calc = Castep(directory='cuvac-neb-morse', label='CuVacMorse', castep_command=castep_cmd)
-cuvac_reac.calc.cell.positions_abs_product = cuvac_prod
-cuvac_reac.calc.cell.positions_abs_intermediate = cuvac_intm
-cuvac_reac.calc.cell.fix_com = False
-cuvac_reac.calc.cell.species_pot = [('Cu', '../Cu_C19_LDA_OTF.usp')]
+cuvac_castep = cuvac_reac.copy()
+cuvac_castep.calc = Castep(directory='cuvac-neb-morse', label='CuVacMorse', castep_command=castep_cmd)
+cuvac_castep.calc.cell.positions_abs_product = cuvac_prod
+cuvac_castep.calc.cell.positions_abs_intermediate = cuvac_intm
+cuvac_castep.calc.cell.fix_com = False
+cuvac_castep.calc.cell.species_pot = [('Cu', '../Cu_C19_LDA_OTF.usp')]
 
 # Convert to units
 DE_kcal_mol = DE*23.060922344650095
@@ -99,27 +100,26 @@ k = 2*A**2/nnr**2*DE_kcal_mol
 n_path_points = 5
 n_steps = 10
 
-cuvac_reac.calc.param.task = 'transitionstatesearch'
-cuvac_reac.calc.param.iprint = 2
-cuvac_reac.calc.param.tssearch_method = 'neb'
-# cuvac_reac.calc.param.tssearch_neb_method = 'fire'
-cuvac_reac.calc.param.tssearch_neb_max_iter = n_steps
-cuvac_reac.calc.param.tssearch_max_path_points = n_path_points
-#cuvac_reac.calc.param.tssearch_neb_climbing = True
-cuvac_reac.calc.param.tssearch_force_tol = 1e-3
-cuvac_reac.calc.param.devel_code = """PP=T
+cuvac_castep.calc.param.task = 'transitionstatesearch'
+cuvac_castep.calc.param.iprint = 2
+cuvac_castep.calc.param.tssearch_method = 'neb'
+cuvac_castep.calc.param.tssearch_neb_max_iter = n_steps
+cuvac_castep.calc.param.tssearch_max_path_points = n_path_points
+#cuvac_castep.calc.param.tssearch_neb_climbing = True
+cuvac_castep.calc.param.tssearch_force_tol = 1e-3
+cuvac_castep.calc.param.devel_code = """PP=T
 pp: MORS=T MORS_CUT={CR} MORS_R={R} MORS_K={K} MORS_D={D} :endpp
 """.format(CR=2.7*nnr, R=nnr, K=k, D=DE_kcal_mol)
 
 print('1:  RUNNING CASTEP TEST')
-cuvac_reac.get_potential_energy()
+cuvac_castep.get_potential_energy()
 
 # Read the TS file
 cuvacts = TSFile('CuVacMorse', 'cuvac-neb-morse')
 cuvacts_rea = cuvacts.blocks['REA']
 cuvacts_tst = cuvacts.blocks['TST']
 cuvacts_pro = cuvacts.blocks['PRO']
-cuvacts_imgs = cuvacts_rea[0] + cuvacts_tst[cuvac_tst.last_index] + cuvacts_pro[0]
+cuvacts_imgs = cuvacts_rea[1] + cuvacts_tst[cuvacts_tst.last_index] + cuvacts_pro[1]
 
 for i, b in enumerate(cuvacts_imgs):
     # Save the atoms
@@ -129,18 +129,18 @@ E_castep = [img.atoms.get_potential_energy() for img in cuvacts_imgs]
 np.savetxt('outputs/CuVac-CASTEP-E.dat', E_castep)
 
 # Save the castep calculator, prepare for the ASE NEB
-cast_calc = cuvac_reac.calc
+cast_calc = cuvac_castep.calc
 cuvac_reac.calc = makeMorseCalc()
 
-images = [cuvac_reac]
+images = [cuvac_reac.copy()]
 images += [cuvac_reac.copy() for i in range(n_path_points)]
-images += [cuvac_prod]
+images += [cuvac_prod.copy()]
 neb = NEB(images)
 # Interpolate linearly the potisions of the three middle images:
 neb.interpolate()
 
 # Set calculators:
-for image in images[1:-1]:
+for image in images:
     image.calc = makeMorseCalc()
 
 # Optimize:
@@ -151,7 +151,7 @@ optimizer.run(fmax=0.04)
 # And write the files
 for i, a in enumerate(images):
     # Save the atoms
-    io.write('outputs/CuVac-ASE-{0}.cell'.format(i+1), a)
+    io.write('outputs/CuVac-ASE-{0}.cell'.format(i), a)
 # And the energies
 E_ase = [a.get_potential_energy() for a in images]
 np.savetxt('outputs/CuVac-ASE-E.dat', E_ase)
@@ -165,9 +165,9 @@ def makeSocketCalc():
 
 cast_calc.prepare_input_files(cuvac_reac)
 
-images = [cuvac_reac]
+images = [cuvac_reac.copy()]
 images += [cuvac_reac.copy() for i in range(n_path_points)]
-images += [cuvac_prod]
+images += [cuvac_prod.copy()]
 neb = NEB(images, allow_shared_calculator=True)
 # Interpolate linearly the potisions of the three middle images:
 neb.interpolate()
@@ -202,7 +202,7 @@ for i, a in enumerate(images):
     # Change back the calculator (for the energy)
     a.calc = makeMorseCalc()
     # Save the atoms
-    io.write('outputs/CuVac-SOCKET-{0}.cell'.format(i+1), a)
+    io.write('outputs/CuVac-SOCKET-{0}.cell'.format(i), a)
 # And the energies
 E_skt = [a.get_potential_energy() for a in images]
 np.savetxt('outputs/CuVac-SOCKET-E.dat', E_skt)

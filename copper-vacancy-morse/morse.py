@@ -59,7 +59,8 @@ class MorsePotential(Calculator):
 
     def calculate(self, atoms=None, properties=['energy'],
                   system_changes=['positions', 'numbers', 'cell',
-                                  'pbc', 'charges', 'magmoms']):
+                                  'pbc', 'charges', 'magmoms'], 
+                  verbose=False):
         Calculator.calculate(self, atoms, properties, system_changes)
         epsilon = self.parameters.epsilon
         rho0 = self.parameters.rho0
@@ -83,7 +84,8 @@ class MorsePotential(Calculator):
             energy = 0.5 * (E * fc).sum()
             F = (dE * fc + E * dfc * dhat).T
         else:
-            print('WARNING: not applying smooth cutoff!')
+            if verbose:
+                print('WARNING: not applying smooth cutoff!')
             energy = 0.5 * E.sum()
             F = dE.T
         for dim in range(3):
