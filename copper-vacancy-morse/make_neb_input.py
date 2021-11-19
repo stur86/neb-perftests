@@ -4,12 +4,15 @@
 
 import numpy as np
 import ase.io
+import io
+import clipboard
 from ase.build import bulk, make_supercell
 from ase.calculators.castep import Castep
 from morse import MorsePotential
 from ase.optimize import BFGS
 from soprano.collection.generate import linspaceGen
 from soprano.properties.linkage import LinkageList
+from readts import TSFile
 
 def read_forces(out, n_atoms):
     forces = []
@@ -45,9 +48,6 @@ def read_neb_data(out):
     dof = dof.astype(int)
     return image, dof, tangent, real, real_proj, e_band, total
 
-import clipboard
-import io
-
 def paste_forces(n_atoms):
     text = clipboard.paste()
     return read_forces(io.StringIO(text), n_atoms)
@@ -56,54 +56,63 @@ def paste_neb():
     text = clipboard.paste()
     return read_neb_data(io.StringIO(text))
 
-from readts import TSFile
-
 A = 4.0
 DE = 1.0   # eV
 nnr = 2.55 # Angstrom, nearest neighbour distance
 
-cu = bulk('Cu', a=nnr*2**0.5, cubic=True)
-
-cu3x3 = make_supercell(cu, np.eye(3)*3)
-
-# Remove the most central atom to create a vacancy
-C = np.ones(3)*cu3x3.get_cell()[0,0]*0.5
-pos = cu3x3.positions
-i1vac = np.argmin(np.linalg.norm(pos-C, axis=1))
-p1vac = pos[i1vac]
-
-cuvac = cu3x3.copy()
-del(cuvac[i1vac])
-
-# Now the one closest to it
-i2vac = np.argmin(np.linalg.norm(cuvac.positions-p1vac, axis=1))
-
-cuvac_reac = cuvac.copy()
-cuvac_prod = cuvac_reac.copy()
-cuvac_prod[i2vac].position = p1vac
-
-# Now optimise with Morse Potential
 def makeMorseCalc():
     return MorsePotential(epsilon=DE, rho0=A, r0=nnr, apply_cutoff=False)
 
-# Save an unoptimized copy
-ase.io.write('CuVac-107.cell', cuvac_reac)
+try:
 
-cuvac_reac.calc = makeMorseCalc()
-cuvac_prod.calc = makeMorseCalc()
+    f_reac = io.read('CuVac-107-reac.cell')
+    f_prod = io.read('CuVac-107-prod.cell')
 
-dyn = BFGS(cuvac_reac)
-f_reac = cuvac_reac.get_forces()
-# dyn.run(fmax=1e-3)
+except IOError:
 
-print('Reactants converged at energy {0} eV'.format(cuvac_reac.get_potential_energy()))
+    cu = bulk('Cu', a=nnr*2**0.5, cubic=True)
 
-dyn = BFGS(cuvac_prod)
-f_prod = cuvac_prod.get_forces()
-# dyn.run(fmax=1e-3)
+    cu3x3 = make_supercell(cu, np.eye(3)*3)
+
+    # Remove the most central atom to create a vacancy
+    C = np.ones(3)*cu3x3.get_cell()[0,0]*0.5
+    pos = cu3x3.positions
+    i1vac = np.argmin(np.linalg.norm(pos-C, axis=1))
+    p1vac = pos[i1vac]
+
+    cuvac = cu3x3.copy()
+    del(cuvac[i1vac])
+
+    # Now the one closest to it
+    i2vac = np.argmin(np.linalg.norm(cuvac.positions-p1vac, axis=1))
+
+    cuvac_reac = cuvac.copy()
+    cuvac_prod = cuvac_reac.copy()
+    cuvac_prod[i2vac].position = p1vac
+
+    # Now optimise with Morse Potential
+    # Save an unoptimized copy
+    ase.io.write('CuVac-107.cell', cuvac_reac)
+
+    cuvac_reac.calc = makeMorseCalc()
+    cuvac_prod.calc = makeMorseCalc()
+
+    dyn = BFGS(cuvac_reac)
+    f_reac = cuvac_reac.get_forces()
+    dyn.run(fmax=1e-3)
+
+    print('Reactants converged at energy {0} eV'.format(cuvac_reac.get_potential_energy()))
+
+    dyn = BFGS(cuvac_prod)
+    f_prod = cuvac_prod.get_forces()
+    dyn.run(fmax=1e-3)
+
+    print('Products converged at energy {0} eV'.format(cuvac_prod.get_potential_energy()))
+    
+    ase.io.write('CuVac-107-reac.cell', cuvac_reac)
+    ase.io.write('CuVac-107-prod.cell', cuvac_prod)
 
 
-print('Products converged at energy {0} eV'.format(cuvac_prod.get_potential_energy()))
 
 # Interpolate
 lgen = linspaceGen(cuvac_reac, cuvac_prod, 3, True)
@@ -117,8 +126,6 @@ cuvac_reac.calc.cell.positions_abs_product = cuvac_prod
 cuvac_reac.calc.cell.positions_abs_intermediate = cuvac_intm
 cuvac_reac.calc.cell.fix_com = False
 cuvac_reac.calc.cell.species_pot = [('Cu', '../Cu_C19_LDA_OTF.usp')]
-
-# Morse potential
 
 # Convert to units
 DE_kcal_mol = DE*23.060922344650095

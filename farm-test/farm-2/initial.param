@@ -1,5 +1,5 @@
 #######################################################
-#CASTEP param file: /home/phony_stark/Desktop/RAL/eCSE/neb-perftests/copper-vacancy-morse/cuvac-neb-morse/CuVacMorse.param
+#CASTEP param file: farm-2/initial.param
 #Created using the Atomic Simulation Environment (ASE)#
 # Internal settings of the calculator
 # This can be switched off by settings
@@ -7,15 +7,15 @@
 # If stated, this will be automatically processed
 # by ase.io.castep.read_seed()
 # ASE_INTERFACE _build_missing_pspots : True
-# ASE_INTERFACE _castep_command : castep.mpi
-# ASE_INTERFACE _castep_pp_path : /home/phony_stark/Desktop/RAL/eCSE/neb-perftests/copper-vacancy-morse
+# ASE_INTERFACE _castep_command : castep
+# ASE_INTERFACE _castep_pp_path : /home/phony_stark/Desktop/RAL/eCSE/neb-perftests/copper-vacancy
 # ASE_INTERFACE _check_checkfile : True
 # ASE_INTERFACE _copy_pspots : False
-# ASE_INTERFACE _directory : /home/phony_stark/Desktop/RAL/eCSE/neb-perftests/copper-vacancy-morse/cuvac-neb-morse
+# ASE_INTERFACE _directory : farm-2
 # ASE_INTERFACE _export_settings : True
 # ASE_INTERFACE _find_pspots : False
 # ASE_INTERFACE _force_write : True
-# ASE_INTERFACE _label : CuVacMorse
+# ASE_INTERFACE _label : initial
 # ASE_INTERFACE _link_pspots : True
 # ASE_INTERFACE _pedantic : False
 # ASE_INTERFACE _prepare_input_only : False
@@ -26,13 +26,10 @@
 #######################################################
 
 TASK: transitionstatesearch
-IPRINT: 2
+CUT_OFF_ENERGY: 500.0 
+NUM_FARMS: 2
+XC_FUNCTIONAL: pbe
+MAX_SCF_CYCLES: 100
 TSSEARCH_METHOD: neb
-TSSEARCH_MAX_PATH_POINTS: 5
-TSSEARCH_FORCE_TOL: 0.001 
-%BLOCK DEVEL_CODE
-PP=T
-pp: MORS=T MORS_CUT=6.885 MORS_R=2.55 MORS_K=113.48704575606354 MORS_D=23.060922344650095 :endpp
-%ENDBLOCK DEVEL_CODE
-
-TSSEARCH_NEB_MAX_ITER: 10
+TSSEARCH_MAX_PATH_POINTS: 2
+TSSEARCH_NEB_MAX_ITER: 1
