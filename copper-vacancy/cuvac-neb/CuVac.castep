@@ -56,22 +56,21 @@
  
  
  
- Compiled for linux_x86_64_ifort on Mon, 15 Nov 2021 11:53:18 +0000
- from code version 
- bc31e48+  new-neb-implementation  Mon Nov 15 11:53:07 2021 +0000
- Compiler: Intel Fortran 18.0.3.222; Optimisation: fast
- MATHLIBS: Intel MKL(2018.0.3) (LAPACK version 3.7.0)
+ Compiled for linux_x86_64_cray-XT on Thu, 18 Nov 2021 16:26:02 +0000
+ from code version cb551d6e8+  new-neb-implementation  Wed Nov 17 12:19:37 2021 +00
+ Compiler: Cray Fortran 10.0.4; Optimisation: fast
+ MATHLIBS: LibSci (LAPACK version 3.6.1)
  FFT Lib : default
  Fundamental constants values: CODATA 2014
  
- Run started: Mon, 15 Nov 2021 12:35:37 +0000
+ Run started: Tue, 30 Nov 2021 10:54:35 +0000
  
  Atomic calculation performed for Cu: 1s2 2s2 2p6 3s2 3p6 3d10 4s1
  
- Converged in 143 iterations to an ae energy of -45030.712 eV
+ Converged in 144 iterations to an ae energy of -45030.712 eV
  
    ============================================================                
-   | Pseudopotential Report - Date of generation 15-11-2021   |                
+   | Pseudopotential Report - Date of generation 30-11-2021   |                
    ------------------------------------------------------------                
    | Element: Cu Ionic charge: 11.00 Level of theory: PBE     |                
    | Atomic Solver: Koelling-Harmon                           |                
@@ -102,8 +101,8 @@
  Pseudo atomic calculation performed for Cu 3d10 4s1
  
  Converged in 49 iterations to a total energy of -1676.8614 eV
- Calculation parallelised over 64 processes.
- Data is distributed by G-vector(2-way) and k-point(32-way)
+ Calculation parallelised over 128 processes.
+ Data is distributed by G-vector(4-way) and k-point(32-way)
 
  ************************************ Title ************************************
  
@@ -153,7 +152,7 @@
  output    efield chi2 unit                     : pm/V
   
  wavefunctions paging                           : none
- random number generator seed                   : randomised (123537279)
+ random number generator seed                   : randomised (105438332)
  data distribution                              : optimal for this architecture
  optimization strategy                          : balance speed and memory
 
@@ -225,7 +224,7 @@
  NEB method                                     : ODE12R    
  max. number of NEB iterations                  :        100
  max. number of path points                     :         11
- inter-bead spring constant                     : 0.1000       eV/A**2
+ inter-bead spring constant                     : 0.1000E+00   eV/A**2
  tangent mode                                   : SPLINE    
  central bead is                                : climbing up
 
@@ -355,7 +354,7 @@
                            -------------------------------
                        MP grid size for SCF calculation is  4  4  4
                             with an offset of   0.000  0.000  0.000
-                       Number of kpoints used =            32
+                       Number of kpoints used =   32
  
                            -------------------------------
                                Symmetry and Constraints
@@ -363,7 +362,7 @@
  
                       Maximum deviation from symmetry =  0.00000         ANG
  
-                      Number of symmetry operations   =           1
+                      Number of symmetry operations   = 1
          There are no ionic constraints specified or generated for this cell
                       Point group of crystal =     1: C1, 1, 1
                       Space group of crystal =   221: Pm-3m, -P 4 2 3
@@ -382,18 +381,18 @@
   
 +---------------- MEMORY AND SCRATCH DISK ESTIMATES PER PROCESS --------------+
 |                                                     Memory          Disk    |
-| Baseline code, static data and system overhead      538.0 MB         0.0 MB |
+| Baseline code, static data and system overhead     3286.0 MB         0.0 MB |
 | BLAS internal memory storage                          0.0 MB         0.0 MB |
-| Model and support data                              175.5 MB       147.5 MB |
-| Electronic energy minimisation requirements         134.9 MB         0.0 MB |
-| Force calculation requirements                       12.6 MB         0.0 MB |
+| Model and support data                              130.6 MB        73.9 MB |
+| Electronic energy minimisation requirements          68.5 MB         0.0 MB |
+| Force calculation requirements                        6.3 MB         0.0 MB |
 |                                               ----------------------------- |
-| Approx. total storage required per process          848.4 MB       147.5 MB |
+| Approx. total storage required per process         3485.1 MB        73.9 MB |
 |                                                                             |
 | Requirements will fluctuate during execution and may exceed these estimates |
 +-----------------------------------------------------------------------------+
 Calculating approximate eigenstates for fixed initial Hamiltonian
-Cut-off for approx. calculation is   89.988 eV
+Cut-off for approx. calculation is  131.752 eV
 Improving approx. states at cut-off of  272.114 eV
 Resetting cut-off to  500.000 eV
 Calculating total energy with cut-off of  500.000 eV.
@@ -401,31 +400,31 @@ Calculating total energy with cut-off of  500.000 eV.
 SCF loop      Energy           Fermi           Energy gain       Timer   <-- SCF
                                energy          per atom          (sec)   <-- SCF
 ------------------------------------------------------------------------ <-- SCF
-Initial  -5.30523546E+004  0.00000000E+000                        36.04  <-- SCF
-      1  -5.21055673E+004  4.22554478E+000  -3.05415249E+001      49.60  <-- SCF
-      2  -5.21074225E+004  4.28503526E+000   5.98440948E-002      68.73  <-- SCF
-      3  -5.21079519E+004  4.30070615E+000   1.70796996E-002      81.80  <-- SCF
-      4  -5.21078972E+004  4.17402609E+000  -1.76565370E-003      93.50  <-- SCF
-      5  -5.21077525E+004  4.16591046E+000  -4.66879319E-003     104.99  <-- SCF
-      6  -5.21077610E+004  4.19559473E+000   2.76644988E-004     116.64  <-- SCF
-      7  -5.21077291E+004  4.18897715E+000  -1.02981756E-003     128.12  <-- SCF
-      8  -5.21077280E+004  4.18480269E+000  -3.48432816E-005     140.02  <-- SCF
-      9  -5.21077278E+004  4.18585199E+000  -7.45584890E-006     155.97  <-- SCF
-     10  -5.21077614E+004  4.18442211E+000   1.08282633E-003     169.17  <-- SCF
-     11  -5.21077625E+004  4.18537368E+000   3.49729699E-005     180.83  <-- SCF
-     12  -5.21077671E+004  4.18489378E+000   1.48577439E-004     191.72  <-- SCF
-     13  -5.21077671E+004  4.18497758E+000   9.20437383E-007     200.99  <-- SCF
-     14  -5.21077671E+004  4.18495048E+000   2.25286211E-007     211.64  <-- SCF
+Initial  -5.30539945E+004  0.00000000E+000                        28.63  <-- SCF
+      1  -5.21056647E+004  4.24673388E+000  -3.05912838E+001      40.98  <-- SCF
+      2  -5.21072072E+004  4.29711563E+000   4.97586654E-002      53.94  <-- SCF
+      3  -5.21079327E+004  4.29187658E+000   2.34043925E-002      63.47  <-- SCF
+      4  -5.21078941E+004  4.19403919E+000  -1.24747222E-003      72.88  <-- SCF
+      5  -5.21077221E+004  4.17345856E+000  -5.54597719E-003      82.34  <-- SCF
+      6  -5.21077121E+004  4.20141836E+000  -3.23785599E-004      92.11  <-- SCF
+      7  -5.21076902E+004  4.18586783E+000  -7.05192237E-004     101.57  <-- SCF
+      8  -5.21076913E+004  4.18288935E+000   3.39632577E-005     110.97  <-- SCF
+      9  -5.21076892E+004  4.18549511E+000  -6.61314376E-005     120.25  <-- SCF
+     10  -5.21077238E+004  4.18445347E+000   1.11582664E-003     126.97  <-- SCF
+     11  -5.21077249E+004  4.18535721E+000   3.45147450E-005     135.85  <-- SCF
+     12  -5.21077295E+004  4.18489079E+000   1.48162783E-004     144.19  <-- SCF
+     13  -5.21077295E+004  4.18499649E+000   1.17697630E-006     150.86  <-- SCF
+     14  -5.21077295E+004  4.18494945E+000  -3.44560347E-007     157.58  <-- SCF
 ------------------------------------------------------------------------ <-- SCF
  
-Integrated Spin Density     =   -0.285078E-02 hbar/2                        
-Integrated |Spin Density|   =    0.116292E-01 hbar/2                        
+Integrated Spin Density     =   -0.358125E-02 hbar/2                        
+Integrated |Spin Density|   =    0.121747E-01 hbar/2                        
  
-Final energy, E             =  -52107.55424540     eV
-Final free energy (E-TS)    =  -52107.76709508     eV
+Final energy, E             =  -52107.51666172     eV
+Final free energy (E-TS)    =  -52107.72951072     eV
 (energies not corrected for finite basis set)
  
-NB est. 0K energy (E-0.5TS)      =  -52107.66067024     eV
+NB est. 0K energy (E-0.5TS)      =  -52107.62308622     eV
  
 
 Writing analysis data to CuVac.castep_bin
@@ -444,14 +443,14 @@ Writing model to CuVac.check
      NEB elastic constant:      0.001029 Hartree/Bohr^2
 Optimisation algorithm:     ode12r                                                                                                                                                                                                                                                          
 Tangent mode:     Spline interpolation                                                                                                                                                                                                                                            
- Number of task farms to use:           1
+ Number of task farms to use: 1
   --- Initialising NEB constraints ---
-     Fixed            0  degrees of freedom
-     Using            0  Lagrange multipliers
+     Fixed  0  degrees of freedom
+     Using  0  Lagrange multipliers
  
 Using climbing image:        6
- Reactant structure energy:   -52107.7670993283       eV
- Product structure energy:   -52107.7671219611       eV
+ Reactant structure energy:  -52107.729516430845  eV
+ Product structure energy:  -52107.729539217158  eV
  
  *********************** 
      Iteration:     1
@@ -459,8 +458,8 @@ Using climbing image:        6
  *********************** 
  *********************** 
      Iteration:     2
-         Max Force Component:             0.638518 eV/Ang (0)
-         Max Displacement Component:      0.168533 Ang (0)
+         Max Force Component:             0.638511 eV/Ang (0)
+         Max Displacement Component:      0.168532 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -487,14 +486,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     5
-         Max Force Component:             0.076767 eV/Ang (0)
+         Max Force Component:             0.076774 eV/Ang (0)
          Max Displacement Component:      0.014769 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:     6
-         Max Force Component:             0.062567 eV/Ang (0)
-         Max Displacement Component:      0.015851 Ang (0)
+         Max Force Component:             0.062568 eV/Ang (0)
+         Max Displacement Component:      0.015852 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -504,14 +503,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     7
-         Max Force Component:             0.049991 eV/Ang (1)
+         Max Force Component:             0.049950 eV/Ang (1)
          Max Displacement Component:      0.014462 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:     8
-         Max Force Component:             0.051055 eV/Ang (0)
-         Max Displacement Component:      0.007652 Ang (0)
+         Max Force Component:             0.051051 eV/Ang (0)
+         Max Displacement Component:      0.007659 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -521,14 +520,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:     9
-         Max Force Component:             0.049229 eV/Ang (1)
+         Max Force Component:             0.049226 eV/Ang (1)
          Max Displacement Component:      0.003928 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:    10
-         Max Force Component:             0.052923 eV/Ang (0)
-         Max Displacement Component:      0.002876 Ang (0)
+         Max Force Component:             0.052919 eV/Ang (0)
+         Max Displacement Component:      0.002875 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -538,14 +537,14 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    11
-         Max Force Component:             0.051520 eV/Ang (0)
-         Max Displacement Component:      0.002121 Ang (0)
+         Max Force Component:             0.051514 eV/Ang (0)
+         Max Displacement Component:      0.002122 Ang (0)
 
  *********************** 
  *********************** 
      Iteration:    12
-         Max Force Component:             0.053617 eV/Ang (0)
-         Max Displacement Component:      0.001308 Ang (0)
+         Max Force Component:             0.053616 eV/Ang (0)
+         Max Displacement Component:      0.001307 Ang (0)
 
  *********************** 
   Saving model to checkpoint file...
@@ -555,13 +554,13 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    13
-         Max Force Component:             0.052361 eV/Ang (0)
-         Max Displacement Component:      0.000950 Ang (1)
+         Max Force Component:             0.052357 eV/Ang (0)
+         Max Displacement Component:      0.000951 Ang (1)
 
  *********************** 
  *********************** 
      Iteration:    14
-         Max Force Component:             0.053922 eV/Ang (0)
+         Max Force Component:             0.053921 eV/Ang (0)
          Max Displacement Component:      0.000450 Ang (2)
 
  *********************** 
@@ -572,13 +571,13 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    15
-         Max Force Component:             0.052631 eV/Ang (0)
+         Max Force Component:             0.052629 eV/Ang (0)
          Max Displacement Component:      0.000237 Ang (3)
 
  *********************** 
  *********************** 
      Iteration:    16
-         Max Force Component:             0.054001 eV/Ang (0)
+         Max Force Component:             0.054000 eV/Ang (0)
          Max Displacement Component:      0.000104 Ang (4)
 
  *********************** 
@@ -589,13 +588,13 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    17
-         Max Force Component:             0.052695 eV/Ang (0)
+         Max Force Component:             0.052692 eV/Ang (0)
          Max Displacement Component:      0.000057 Ang (5)
 
  *********************** 
  *********************** 
      Iteration:    18
-         Max Force Component:             0.054018 eV/Ang (0)
+         Max Force Component:             0.054017 eV/Ang (0)
          Max Displacement Component:      0.000025 Ang (6)
 
  *********************** 
@@ -606,13 +605,13 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    19
-         Max Force Component:             0.052712 eV/Ang (0)
+         Max Force Component:             0.052709 eV/Ang (0)
          Max Displacement Component:      0.000013 Ang (7)
 
  *********************** 
  *********************** 
      Iteration:    20
-         Max Force Component:             0.054025 eV/Ang (0)
+         Max Force Component:             0.054024 eV/Ang (0)
          Max Displacement Component:      0.000006 Ang (8)
 
  *********************** 
@@ -623,13 +622,13 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    21
-         Max Force Component:             0.052713 eV/Ang (0)
+         Max Force Component:             0.052710 eV/Ang (0)
          Max Displacement Component:      0.000003 Ang (9)
 
  *********************** 
  *********************** 
      Iteration:    22
-         Max Force Component:             0.054026 eV/Ang (0)
+         Max Force Component:             0.054023 eV/Ang (0)
          Max Displacement Component:      0.000001 Ang (*)
 
  *********************** 
@@ -640,211 +639,615 @@ Writing analysis data to CuVac.castep_bin
 Writing model to CuVac.check
  *********************** 
      Iteration:    23
-         Max Force Component:             0.052714 eV/Ang (0)
+         Max Force Component:             0.052713 eV/Ang (0)
          Max Displacement Component:      0.000001 Ang (*)
 
  *********************** 
- *********************** 
-     Iteration:    24
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
+ Stopping NEB iterations due to displacements being too small
 
- *********************** 
-  Saving model to checkpoint file...
+     Failed to converge
+ 
+ ************************************** Forces **************************************
+ *                                                                                  *
+ *                           Cartesian components (eV/A)                            *
+ * -------------------------------------------------------------------------------- *
+ *                         x                    y                    z              *
+ *                                                                                  *
+ * Cu              1     -0.00747             -0.00747              0.00002         *
+ * Cu              2     -0.00445             -0.01245             -0.00812         *
+ * Cu              3     -0.01246             -0.00443             -0.00811         *
+ * Cu              4      0.01012              0.01011             -0.00022         *
+ * Cu              5     -0.01053             -0.01052              0.00024         *
+ * Cu              6     -0.00443             -0.01246              0.00793         *
+ * Cu              7     -0.01246             -0.00444              0.00793         *
+ * Cu              8      0.14938              0.14938              0.00027         *
+ * Cu              9      0.03230             -0.02098              0.00003         *
+ * Cu             10      0.00145             -0.01275             -0.00761         *
+ * Cu             11      0.01480             -0.02041              0.07042         *
+ * Cu             12     -0.00536             -0.03269              0.00003         *
+ * Cu             13     -0.03838             -0.00570              0.00024         *
+ * Cu             14      0.00145             -0.01275              0.00743         *
+ * Cu             15      0.01479             -0.02041             -0.07059         *
+ * Cu             16     -0.01192              0.00532              0.00025         *
+ * Cu             17     -0.02098              0.03230              0.00004         *
+ * Cu             18     -0.02041              0.01481              0.07042         *
+ * Cu             19     -0.01275              0.00145             -0.00761         *
+ * Cu             20     -0.03269             -0.00536             -0.00023         *
+ * Cu             21     -0.00570             -0.03838              0.00024         *
+ * Cu             22     -0.02042              0.01479             -0.07060         *
+ * Cu             23     -0.01276              0.00144              0.00743         *
+ * Cu             24      0.00532             -0.01192              0.00025         *
+ * Cu             25     -0.02559             -0.02559              0.00002         *
+ * Cu             26     -0.00261              0.01432             -0.03477         *
+ * Cu             27      0.01432             -0.00262             -0.03477         *
+ * Cu             28     -0.00395             -0.00395              0.00003         *
+ * Cu             29     -0.00262              0.01432              0.03460         *
+ * Cu             30      0.01432             -0.00261              0.03460         *
+ * Cu             31      0.00965              0.00964              0.00025         *
+ *                                                                                  *
+ ************************************************************************************
+ 
+ Pseudo atomic calculation performed for Cu 3d10 4s1
+ 
+ Converged in 49 iterations to a total energy of -1676.8614 eV
+Charge spilling parameter for spin component 1 = 0.09%
+Charge spilling parameter for spin component 2 = 0.09%
+ 
+                   Orbital Populations                  
+  ---------------------------------------------------------------
+     Ion    Atom   Orbital              Up        Down      Spin
+  ---------------------------------------------------------------
+     Cu     1      Dzz                  0.978     0.978    -0.000
+     Cu     1      Dzy                  0.966     0.966     0.000
+     Cu     1      Dzx                  0.966     0.966     0.000
+     Cu     1      Dxx-yy               0.978     0.978     0.000
+     Cu     1      Dxy                  0.965     0.965    -0.000
+     Cu     1      S                    0.397     0.397    -0.000
+     Cu     1      Px                   0.079     0.079     0.000
+     Cu     1      Py                   0.079     0.079     0.000
+     Cu     1      Pz                   0.079     0.079     0.000
+     Cu     2      Dzz                  0.977     0.977     0.000
+     Cu     2      Dzy                  0.964     0.964    -0.000
+     Cu     2      Dzx                  0.973     0.973    -0.000
+     Cu     2      Dxx-yy               0.979     0.979    -0.000
+     Cu     2      Dxy                  0.964     0.964    -0.000
+     Cu     2      S                    0.407     0.407    -0.000
+     Cu     2      Px                   0.076     0.076     0.000
+     Cu     2      Py                   0.093     0.093     0.000
+     Cu     2      Pz                   0.077     0.077     0.000
+     Cu     3      Dzz                  0.977     0.977     0.000
+     Cu     3      Dzy                  0.973     0.973    -0.000
+     Cu     3      Dzx                  0.964     0.964    -0.000
+     Cu     3      Dxx-yy               0.979     0.979    -0.000
+     Cu     3      Dxy                  0.964     0.964    -0.000
+     Cu     3      S                    0.407     0.407    -0.000
+     Cu     3      Px                   0.093     0.093    -0.000
+     Cu     3      Py                   0.076     0.076     0.000
+     Cu     3      Pz                   0.077     0.077     0.000
+     Cu     4      Dzz                  0.976     0.976    -0.000
+     Cu     4      Dzy                  0.966     0.966    -0.000
+     Cu     4      Dzx                  0.966     0.966     0.000
+     Cu     4      Dxx-yy               0.978     0.978    -0.000
+     Cu     4      Dxy                  0.966     0.966    -0.000
+     Cu     4      S                    0.413     0.413     0.000
+     Cu     4      Px                   0.077     0.077     0.000
+     Cu     4      Py                   0.077     0.077     0.000
+     Cu     4      Pz                   0.129     0.129    -0.000
+     Cu     5      Dzz                  0.980     0.980     0.000
+     Cu     5      Dzy                  0.964     0.964     0.000
+     Cu     5      Dzx                  0.964     0.964     0.000
+     Cu     5      Dxx-yy               0.976     0.976    -0.000
+     Cu     5      Dxy                  0.974     0.974    -0.000
+     Cu     5      S                    0.407     0.407     0.000
+     Cu     5      Px                   0.077     0.077     0.000
+     Cu     5      Py                   0.077     0.077     0.000
+     Cu     5      Pz                   0.092     0.092     0.000
+     Cu     6      Dzz                  0.977     0.977    -0.000
+     Cu     6      Dzy                  0.964     0.964    -0.000
+     Cu     6      Dzx                  0.973     0.973    -0.000
+     Cu     6      Dxx-yy               0.979     0.979     0.000
+     Cu     6      Dxy                  0.964     0.964    -0.000
+     Cu     6      S                    0.407     0.407     0.000
+     Cu     6      Px                   0.076     0.076     0.000
+     Cu     6      Py                   0.093     0.093     0.000
+     Cu     6      Pz                   0.077     0.077     0.000
+     Cu     7      Dzz                  0.977     0.977    -0.000
+     Cu     7      Dzy                  0.973     0.973    -0.000
+     Cu     7      Dzx                  0.964     0.964    -0.000
+     Cu     7      Dxx-yy               0.979     0.979     0.000
+     Cu     7      Dxy                  0.964     0.964    -0.000
+     Cu     7      S                    0.407     0.407     0.000
+     Cu     7      Px                   0.093     0.093     0.000
+     Cu     7      Py                   0.076     0.076     0.000
+     Cu     7      Pz                   0.077     0.077     0.000
+     Cu     8      Dzz                  0.980     0.980     0.000
+     Cu     8      Dzy                  0.964     0.964     0.000
+     Cu     8      Dzx                  0.964     0.964     0.000
+     Cu     8      Dxx-yy               0.976     0.976    -0.000
+     Cu     8      Dxy                  0.974     0.974     0.000
+     Cu     8      S                    0.402     0.402     0.000
+     Cu     8      Px                   0.076     0.076     0.000
+     Cu     8      Py                   0.076     0.076     0.000
+     Cu     8      Pz                   0.092     0.092     0.000
+     Cu     9      Dzz                  0.978     0.978     0.000
+     Cu     9      Dzy                  0.966     0.966    -0.000
+     Cu     9      Dzx                  0.965     0.965    -0.000
+     Cu     9      Dxx-yy               0.978     0.978    -0.000
+     Cu     9      Dxy                  0.966     0.966     0.000
+     Cu     9      S                    0.397     0.397    -0.000
+     Cu     9      Px                   0.079     0.079     0.000
+     Cu     9      Py                   0.079     0.079     0.000
+     Cu     9      Pz                   0.078     0.078    -0.000
+     Cu    10      Dzz                  0.978     0.978     0.000
+     Cu    10      Dzy                  0.966     0.966     0.000
+     Cu    10      Dzx                  0.966     0.966    -0.000
+     Cu    10      Dxx-yy               0.978     0.978    -0.000
+     Cu    10      Dxy                  0.965     0.965    -0.000
+     Cu    10      S                    0.397     0.397     0.000
+     Cu    10      Px                   0.080     0.080     0.000
+     Cu    10      Py                   0.078     0.078     0.000
+     Cu    10      Pz                   0.080     0.080    -0.000
+     Cu    11      Dzz                  0.977     0.977    -0.000
+     Cu    11      Dzy                  0.973     0.973    -0.000
+     Cu    11      Dzx                  0.964     0.964    -0.000
+     Cu    11      Dxx-yy               0.979     0.979    -0.000
+     Cu    11      Dxy                  0.964     0.964     0.000
+     Cu    11      S                    0.409     0.409     0.000
+     Cu    11      Px                   0.093     0.093     0.000
+     Cu    11      Py                   0.078     0.078     0.000
+     Cu    11      Pz                   0.077     0.077     0.000
+     Cu    12      Dzz                  0.978     0.978     0.000
+     Cu    12      Dzy                  0.970     0.970    -0.000
+     Cu    12      Dzx                  0.965     0.965    -0.000
+     Cu    12      Dxx-yy               0.979     0.979    -0.000
+     Cu    12      Dxy                  0.965     0.965    -0.000
+     Cu    12      S                    0.394     0.394     0.000
+     Cu    12      Px                   0.076     0.076     0.000
+     Cu    12      Py                   0.067     0.067     0.000
+     Cu    12      Pz                   0.068     0.068     0.000
+     Cu    13      Dzz                  0.980     0.980    -0.000
+     Cu    13      Dzy                  0.964     0.964    -0.000
+     Cu    13      Dzx                  0.964     0.964     0.000
+     Cu    13      Dxx-yy               0.976     0.976    -0.000
+     Cu    13      Dxy                  0.973     0.973    -0.000
+     Cu    13      S                    0.406     0.406     0.000
+     Cu    13      Px                   0.078     0.078     0.000
+     Cu    13      Py                   0.076     0.076    -0.000
+     Cu    13      Pz                   0.092     0.092     0.000
+     Cu    14      Dzz                  0.978     0.978     0.000
+     Cu    14      Dzy                  0.966     0.966    -0.000
+     Cu    14      Dzx                  0.966     0.966    -0.000
+     Cu    14      Dxx-yy               0.978     0.978    -0.000
+     Cu    14      Dxy                  0.965     0.965     0.000
+     Cu    14      S                    0.397     0.397     0.000
+     Cu    14      Px                   0.080     0.080     0.000
+     Cu    14      Py                   0.079     0.079     0.000
+     Cu    14      Pz                   0.080     0.080     0.000
+     Cu    15      Dzz                  0.977     0.977    -0.000
+     Cu    15      Dzy                  0.973     0.973    -0.000
+     Cu    15      Dzx                  0.964     0.964    -0.000
+     Cu    15      Dxx-yy               0.979     0.979    -0.000
+     Cu    15      Dxy                  0.964     0.964     0.000
+     Cu    15      S                    0.409     0.409     0.000
+     Cu    15      Px                   0.093     0.093     0.000
+     Cu    15      Py                   0.078     0.078     0.000
+     Cu    15      Pz                   0.077     0.077     0.000
+     Cu    16      Dzz                  0.978     0.978    -0.000
+     Cu    16      Dzy                  0.967     0.967    -0.000
+     Cu    16      Dzx                  0.966     0.966    -0.000
+     Cu    16      Dxx-yy               0.976     0.976    -0.000
+     Cu    16      Dxy                  0.967     0.967    -0.000
+     Cu    16      S                    0.413     0.413     0.000
+     Cu    16      Px                   0.075     0.075     0.000
+     Cu    16      Py                   0.132     0.132     0.000
+     Cu    16      Pz                   0.077     0.077     0.000
+     Cu    17      Dzz                  0.978     0.978     0.000
+     Cu    17      Dzy                  0.965     0.965    -0.000
+     Cu    17      Dzx                  0.966     0.966    -0.000
+     Cu    17      Dxx-yy               0.978     0.978    -0.000
+     Cu    17      Dxy                  0.966     0.966     0.000
+     Cu    17      S                    0.397     0.397    -0.000
+     Cu    17      Px                   0.079     0.079     0.000
+     Cu    17      Py                   0.079     0.079     0.000
+     Cu    17      Pz                   0.078     0.078    -0.000
+     Cu    18      Dzz                  0.977     0.977    -0.000
+     Cu    18      Dzy                  0.964     0.964    -0.000
+     Cu    18      Dzx                  0.973     0.973    -0.000
+     Cu    18      Dxx-yy               0.979     0.979    -0.000
+     Cu    18      Dxy                  0.964     0.964     0.000
+     Cu    18      S                    0.409     0.409     0.000
+     Cu    18      Px                   0.078     0.078     0.000
+     Cu    18      Py                   0.093     0.093     0.000
+     Cu    18      Pz                   0.077     0.077     0.000
+     Cu    19      Dzz                  0.978     0.978     0.000
+     Cu    19      Dzy                  0.966     0.966    -0.000
+     Cu    19      Dzx                  0.966     0.966     0.000
+     Cu    19      Dxx-yy               0.978     0.978     0.000
+     Cu    19      Dxy                  0.965     0.965    -0.000
+     Cu    19      S                    0.397     0.397     0.000
+     Cu    19      Px                   0.079     0.078     0.000
+     Cu    19      Py                   0.080     0.080     0.000
+     Cu    19      Pz                   0.080     0.080     0.000
+     Cu    20      Dzz                  0.978     0.978     0.000
+     Cu    20      Dzy                  0.965     0.965    -0.000
+     Cu    20      Dzx                  0.970     0.970    -0.000
+     Cu    20      Dxx-yy               0.979     0.979     0.000
+     Cu    20      Dxy                  0.965     0.965    -0.000
+     Cu    20      S                    0.394     0.394     0.000
+     Cu    20      Px                   0.067     0.067     0.000
+     Cu    20      Py                   0.076     0.076     0.000
+     Cu    20      Pz                   0.068     0.068     0.000
+     Cu    21      Dzz                  0.980     0.980    -0.000
+     Cu    21      Dzy                  0.964     0.964     0.000
+     Cu    21      Dzx                  0.964     0.964    -0.000
+     Cu    21      Dxx-yy               0.976     0.976    -0.000
+     Cu    21      Dxy                  0.973     0.973    -0.000
+     Cu    21      S                    0.406     0.406     0.000
+     Cu    21      Px                   0.076     0.076    -0.000
+     Cu    21      Py                   0.078     0.078     0.000
+     Cu    21      Pz                   0.092     0.092     0.000
+     Cu    22      Dzz                  0.977     0.977    -0.000
+     Cu    22      Dzy                  0.964     0.964    -0.000
+     Cu    22      Dzx                  0.973     0.973    -0.000
+     Cu    22      Dxx-yy               0.979     0.979    -0.000
+     Cu    22      Dxy                  0.964     0.964     0.000
+     Cu    22      S                    0.409     0.409     0.000
+     Cu    22      Px                   0.078     0.078     0.000
+     Cu    22      Py                   0.093     0.093     0.000
+     Cu    22      Pz                   0.077     0.077     0.000
+     Cu    23      Dzz                  0.978     0.978     0.000
+     Cu    23      Dzy                  0.966     0.966    -0.000
+     Cu    23      Dzx                  0.966     0.966    -0.000
+     Cu    23      Dxx-yy               0.978     0.978    -0.000
+     Cu    23      Dxy                  0.965     0.965     0.000
+     Cu    23      S                    0.397     0.397     0.000
+     Cu    23      Px                   0.079     0.079     0.000
+     Cu    23      Py                   0.080     0.080     0.000
+     Cu    23      Pz                   0.080     0.080     0.000
+     Cu    24      Dzz                  0.978     0.978    -0.000
+     Cu    24      Dzy                  0.966     0.966    -0.000
+     Cu    24      Dzx                  0.967     0.967    -0.000
+     Cu    24      Dxx-yy               0.976     0.976    -0.000
+     Cu    24      Dxy                  0.967     0.967    -0.000
+     Cu    24      S                    0.413     0.413     0.000
+     Cu    24      Px                   0.132     0.132     0.000
+     Cu    24      Py                   0.075     0.075     0.000
+     Cu    24      Pz                   0.077     0.077     0.000
+     Cu    25      Dzz                  0.978     0.978     0.000
+     Cu    25      Dzy                  0.965     0.965    -0.000
+     Cu    25      Dzx                  0.965     0.965    -0.000
+     Cu    25      Dxx-yy               0.978     0.978     0.000
+     Cu    25      Dxy                  0.966     0.966    -0.000
+     Cu    25      S                    0.397     0.397     0.000
+     Cu    25      Px                   0.080     0.080     0.000
+     Cu    25      Py                   0.080     0.080     0.000
+     Cu    25      Pz                   0.077     0.077    -0.000
+     Cu    26      Dzz                  0.978     0.978    -0.000
+     Cu    26      Dzy                  0.966     0.966    -0.000
+     Cu    26      Dzx                  0.965     0.965    -0.000
+     Cu    26      Dxx-yy               0.978     0.978     0.000
+     Cu    26      Dxy                  0.965     0.965     0.000
+     Cu    26      S                    0.396     0.396     0.000
+     Cu    26      Px                   0.079     0.079     0.000
+     Cu    26      Py                   0.080     0.080     0.000
+     Cu    26      Pz                   0.080     0.080     0.000
+     Cu    27      Dzz                  0.978     0.978    -0.000
+     Cu    27      Dzy                  0.965     0.965    -0.000
+     Cu    27      Dzx                  0.966     0.966    -0.000
+     Cu    27      Dxx-yy               0.978     0.978     0.000
+     Cu    27      Dxy                  0.965     0.965     0.000
+     Cu    27      S                    0.396     0.396     0.000
+     Cu    27      Px                   0.080     0.080     0.000
+     Cu    27      Py                   0.079     0.079     0.000
+     Cu    27      Pz                   0.080     0.080     0.000
+     Cu    28      Dzz                  0.977     0.977    -0.000
+     Cu    28      Dzy                  0.966     0.966    -0.000
+     Cu    28      Dzx                  0.966     0.966    -0.000
+     Cu    28      Dxx-yy               0.978     0.978    -0.000
+     Cu    28      Dxy                  0.966     0.966     0.000
+     Cu    28      S                    0.393     0.393    -0.000
+     Cu    28      Px                   0.080     0.080     0.000
+     Cu    28      Py                   0.080     0.080     0.000
+     Cu    28      Pz                   0.083     0.083     0.000
+     Cu    29      Dzz                  0.978     0.978     0.000
+     Cu    29      Dzy                  0.966     0.966    -0.000
+     Cu    29      Dzx                  0.965     0.965     0.000
+     Cu    29      Dxx-yy               0.978     0.978     0.000
+     Cu    29      Dxy                  0.965     0.965    -0.000
+     Cu    29      S                    0.396     0.396     0.000
+     Cu    29      Px                   0.079     0.079     0.000
+     Cu    29      Py                   0.080     0.080     0.000
+     Cu    29      Pz                   0.080     0.080     0.000
+     Cu    30      Dzz                  0.978     0.978     0.000
+     Cu    30      Dzy                  0.965     0.965     0.000
+     Cu    30      Dzx                  0.966     0.966    -0.000
+     Cu    30      Dxx-yy               0.978     0.978     0.000
+     Cu    30      Dxy                  0.965     0.965    -0.000
+     Cu    30      S                    0.396     0.396     0.000
+     Cu    30      Px                   0.080     0.080     0.000
+     Cu    30      Py                   0.079     0.079     0.000
+     Cu    30      Pz                   0.080     0.080     0.000
+     Cu    31      Dzz                  0.980     0.980     0.000
+     Cu    31      Dzy                  0.964     0.964    -0.000
+     Cu    31      Dzx                  0.964     0.964    -0.000
+     Cu    31      Dxx-yy               0.977     0.977    -0.000
+     Cu    31      Dxy                  0.971     0.971    -0.000
+     Cu    31      S                    0.392     0.392     0.000
+     Cu    31      Px                   0.070     0.070     0.000
+     Cu    31      Py                   0.070     0.070     0.000
+     Cu    31      Pz                   0.074     0.074    -0.000
+  ---------------------------------------------------------------
+                           Total:     170.500   170.500    -0.000
+  ---------------------------------------------------------------
+ 
+     Atomic Populations (Mulliken)
+     -----------------------------
+Species          Ion Spin      s       p       d       f      Total   Charge(e)   Spin(hbar/2)
+==============================================================================================
+  Cu              1   up:     0.397   0.237   4.853   0.000   5.487     0.026        0.000
+                  1   dn:     0.397   0.237   4.853   0.000   5.487
+  Cu              2   up:     0.407   0.246   4.857   0.000   5.510    -0.021       -0.000
+                  2   dn:     0.407   0.246   4.857   0.000   5.510
+  Cu              3   up:     0.407   0.246   4.857   0.000   5.510    -0.021       -0.000
+                  3   dn:     0.407   0.246   4.857   0.000   5.510
+  Cu              4   up:     0.413   0.283   4.852   0.000   5.548    -0.097        0.000
+                  4   dn:     0.413   0.283   4.852   0.000   5.548
+  Cu              5   up:     0.407   0.247   4.857   0.000   5.511    -0.022        0.000
+                  5   dn:     0.407   0.246   4.857   0.000   5.511
+  Cu              6   up:     0.407   0.246   4.857   0.000   5.510    -0.021       -0.000
+                  6   dn:     0.407   0.246   4.857   0.000   5.510
+  Cu              7   up:     0.407   0.246   4.857   0.000   5.510    -0.021       -0.000
+                  7   dn:     0.407   0.246   4.857   0.000   5.510
+  Cu              8   up:     0.402   0.243   4.858   0.000   5.503    -0.006        0.000
+                  8   dn:     0.402   0.243   4.858   0.000   5.503
+  Cu              9   up:     0.397   0.237   4.853   0.000   5.486     0.027        0.000
+                  9   dn:     0.397   0.237   4.853   0.000   5.486
+  Cu             10   up:     0.397   0.238   4.853   0.000   5.487     0.026        0.000
+                 10   dn:     0.397   0.238   4.853   0.000   5.487
+  Cu             11   up:     0.409   0.248   4.857   0.000   5.514    -0.028        0.000
+                 11   dn:     0.409   0.248   4.857   0.000   5.514
+  Cu             12   up:     0.394   0.211   4.857   0.000   5.462     0.077       -0.000
+                 12   dn:     0.394   0.211   4.857   0.000   5.462
+  Cu             13   up:     0.406   0.246   4.857   0.000   5.510    -0.020        0.000
+                 13   dn:     0.406   0.246   4.857   0.000   5.510
+  Cu             14   up:     0.397   0.238   4.853   0.000   5.487     0.026        0.000
+                 14   dn:     0.397   0.238   4.853   0.000   5.487
+  Cu             15   up:     0.409   0.248   4.857   0.000   5.514    -0.028        0.000
+                 15   dn:     0.409   0.248   4.857   0.000   5.514
+  Cu             16   up:     0.413   0.284   4.852   0.000   5.549    -0.098       -0.000
+                 16   dn:     0.413   0.284   4.852   0.000   5.549
+  Cu             17   up:     0.397   0.237   4.853   0.000   5.486     0.027        0.000
+                 17   dn:     0.397   0.237   4.853   0.000   5.486
+  Cu             18   up:     0.409   0.248   4.857   0.000   5.514    -0.028        0.000
+                 18   dn:     0.409   0.248   4.857   0.000   5.514
+  Cu             19   up:     0.397   0.238   4.853   0.000   5.487     0.026        0.000
+                 19   dn:     0.397   0.238   4.853   0.000   5.487
+  Cu             20   up:     0.394   0.211   4.857   0.000   5.462     0.077       -0.000
+                 20   dn:     0.394   0.211   4.857   0.000   5.462
+  Cu             21   up:     0.406   0.246   4.857   0.000   5.510    -0.020        0.000
+                 21   dn:     0.406   0.246   4.857   0.000   5.510
+  Cu             22   up:     0.409   0.248   4.857   0.000   5.514    -0.028        0.000
+                 22   dn:     0.409   0.248   4.857   0.000   5.514
+  Cu             23   up:     0.397   0.238   4.853   0.000   5.487     0.026        0.000
+                 23   dn:     0.397   0.238   4.853   0.000   5.487
+  Cu             24   up:     0.413   0.284   4.852   0.000   5.549    -0.098       -0.000
+                 24   dn:     0.413   0.284   4.852   0.000   5.549
+  Cu             25   up:     0.397   0.236   4.853   0.000   5.486     0.027        0.000
+                 25   dn:     0.397   0.236   4.853   0.000   5.486
+  Cu             26   up:     0.396   0.239   4.853   0.000   5.488     0.024       -0.000
+                 26   dn:     0.396   0.239   4.853   0.000   5.488
+  Cu             27   up:     0.396   0.239   4.853   0.000   5.488     0.024       -0.000
+                 27   dn:     0.396   0.239   4.853   0.000   5.488
+  Cu             28   up:     0.393   0.243   4.853   0.000   5.489     0.022       -0.000
+                 28   dn:     0.393   0.243   4.853   0.000   5.489
+  Cu             29   up:     0.396   0.239   4.853   0.000   5.488     0.024        0.000
+                 29   dn:     0.396   0.239   4.853   0.000   5.488
+  Cu             30   up:     0.396   0.239   4.853   0.000   5.488     0.024        0.000
+                 30   dn:     0.396   0.239   4.853   0.000   5.488
+  Cu             31   up:     0.392   0.214   4.857   0.000   5.463     0.073       -0.000
+                 31   dn:     0.392   0.214   4.857   0.000   5.463
+==============================================================================================
+ 
+                 Bond                   Population        Spin       Length (A)
+================================================================================
+             Cu 8  -- Cu 18                  0.31         0.00          2.52337
+             Cu 8  -- Cu 11                  0.31        -0.00          2.52337
+             Cu 8  -- Cu 15                  0.31         0.00          2.52343
+             Cu 8  -- Cu 22                  0.31         0.00          2.52343
+             Cu 2  -- Cu 13                  0.31         0.00          2.53082
+             Cu 3  -- Cu 21                  0.31         0.00          2.53082
+             Cu 7  -- Cu 21                  0.31         0.00          2.53087
+             Cu 6  -- Cu 13                  0.31         0.00          2.53088
+             Cu 2  -- Cu 11                  0.31         0.00          2.53427
+             Cu 3  -- Cu 18                  0.31        -0.00          2.53427
+             Cu 6  -- Cu 15                  0.31        -0.00          2.53428
+             Cu 7  -- Cu 22                  0.31        -0.00          2.53428
+             Cu 2  -- Cu 5                   0.31        -0.00          2.53502
+             Cu 3  -- Cu 5                   0.31        -0.00          2.53503
+             Cu 5  -- Cu 7                   0.31        -0.00          2.53508
+             Cu 5  -- Cu 6                   0.31        -0.00          2.53509
+             Cu 2  -- Cu 3                   0.31         0.00          2.53950
+             Cu 6  -- Cu 7                   0.31         0.00          2.53951
+             Cu 18 -- Cu 21                  0.31         0.00          2.54094
+             Cu 11 -- Cu 13                  0.31         0.00          2.54095
+             Cu 13 -- Cu 15                  0.31         0.00          2.54100
+             Cu 21 -- Cu 22                  0.31         0.00          2.54101
+             Cu 24 -- Cu 27                  0.27         0.00          2.54135
+             Cu 16 -- Cu 26                  0.27         0.00          2.54135
+             Cu 16 -- Cu 29                  0.27         0.00          2.54139
+             Cu 24 -- Cu 30                  0.27         0.00          2.54140
+             Cu 27 -- Cu 31                  0.27         0.00          2.54520
+             Cu 26 -- Cu 31                  0.27         0.00          2.54521
+             Cu 29 -- Cu 31                  0.27         0.00          2.54525
+             Cu 30 -- Cu 31                  0.27         0.00          2.54526
+             Cu 1  -- Cu 4                   0.26         0.00          2.54643
+             Cu 9  -- Cu 20                  0.27         0.00          2.54856
+             Cu 12 -- Cu 17                  0.27         0.00          2.54856
+             Cu 4  -- Cu 18                  0.30         0.00          2.55126
+             Cu 4  -- Cu 11                  0.30         0.00          2.55126
+             Cu 4  -- Cu 15                  0.30         0.00          2.55131
+             Cu 4  -- Cu 22                  0.30         0.00          2.55131
+             Cu 21 -- Cu 24                  0.30        -0.00          2.55153
+             Cu 13 -- Cu 16                  0.30        -0.00          2.55153
+             Cu 17 -- Cu 28                  0.28        -0.00          2.55491
+             Cu 9  -- Cu 28                  0.28        -0.00          2.55491
+             Cu 1  -- Cu 20                  0.27         0.00          2.55545
+             Cu 1  -- Cu 12                  0.27         0.00          2.55545
+             Cu 25 -- Cu 28                  0.28        -0.00          2.55552
+             Cu 15 -- Cu 22                  0.30         0.00          2.55587
+             Cu 11 -- Cu 18                  0.30         0.00          2.55587
+             Cu 19 -- Cu 24                  0.26        -0.00          2.55699
+             Cu 10 -- Cu 16                  0.26        -0.00          2.55699
+             Cu 14 -- Cu 16                  0.26         0.00          2.55703
+             Cu 23 -- Cu 24                  0.26         0.00          2.55703
+             Cu 17 -- Cu 22                  0.25         0.00          2.55882
+             Cu 9  -- Cu 15                  0.25         0.00          2.55883
+             Cu 9  -- Cu 11                  0.25        -0.00          2.55884
+             Cu 17 -- Cu 18                  0.25        -0.00          2.55884
+             Cu 2  -- Cu 4                   0.30         0.00          2.56202
+             Cu 3  -- Cu 4                   0.30         0.00          2.56203
+             Cu 4  -- Cu 7                   0.30         0.00          2.56207
+             Cu 4  -- Cu 6                   0.30         0.00          2.56207
+             Cu 8  -- Cu 24                  0.30         0.00          2.56304
+             Cu 8  -- Cu 16                  0.30         0.00          2.56304
+             Cu 10 -- Cu 19                  0.26         0.00          2.56383
+             Cu 14 -- Cu 23                  0.26         0.00          2.56385
+             Cu 22 -- Cu 25                  0.24        -0.00          2.56452
+             Cu 15 -- Cu 25                  0.24        -0.00          2.56453
+             Cu 11 -- Cu 25                  0.24         0.00          2.56454
+             Cu 26 -- Cu 27                  0.27         0.00          2.56454
+             Cu 18 -- Cu 25                  0.24         0.00          2.56454
+             Cu 29 -- Cu 30                  0.27        -0.00          2.56455
+             Cu 3  -- Cu 16                  0.30        -0.00          2.56480
+             Cu 2  -- Cu 24                  0.30        -0.00          2.56480
+             Cu 6  -- Cu 24                  0.30         0.00          2.56487
+             Cu 7  -- Cu 16                  0.30         0.00          2.56487
+             Cu 19 -- Cu 31                  0.27        -0.00          2.56707
+             Cu 10 -- Cu 31                  0.27        -0.00          2.56709
+             Cu 14 -- Cu 31                  0.27         0.00          2.56713
+             Cu 23 -- Cu 31                  0.27         0.00          2.56714
+             Cu 22 -- Cu 30                  0.24         0.00          2.56834
+             Cu 11 -- Cu 26                  0.24        -0.00          2.56836
+             Cu 15 -- Cu 29                  0.24         0.00          2.56836
+             Cu 18 -- Cu 27                  0.24        -0.00          2.56838
+             Cu 5  -- Cu 16                  0.30         0.00          2.56848
+             Cu 5  -- Cu 24                  0.30        -0.00          2.56848
+             Cu 22 -- Cu 23                  0.24         0.00          2.56920
+             Cu 10 -- Cu 11                  0.24         0.00          2.56920
+             Cu 14 -- Cu 15                  0.24         0.00          2.56922
+             Cu 18 -- Cu 19                  0.24         0.00          2.56922
+             Cu 5  -- Cu 19                  0.24         0.00          2.57005
+             Cu 5  -- Cu 10                  0.24         0.00          2.57006
+             Cu 5  -- Cu 14                  0.24         0.00          2.57009
+             Cu 5  -- Cu 23                  0.24         0.00          2.57010
+             Cu 19 -- Cu 20                  0.26         0.00          2.57036
+             Cu 12 -- Cu 14                  0.26         0.00          2.57039
+             Cu 10 -- Cu 12                  0.26         0.00          2.57040
+             Cu 20 -- Cu 23                  0.26         0.00          2.57043
+             Cu 25 -- Cu 26                  0.26        -0.00          2.57189
+             Cu 25 -- Cu 30                  0.26        -0.00          2.57189
+             Cu 25 -- Cu 27                  0.26        -0.00          2.57190
+             Cu 25 -- Cu 29                  0.26        -0.00          2.57190
+             Cu 17 -- Cu 23                  0.26         0.00          2.57224
+             Cu 9  -- Cu 10                  0.26        -0.00          2.57224
+             Cu 9  -- Cu 14                  0.26         0.00          2.57225
+             Cu 17 -- Cu 19                  0.26        -0.00          2.57225
+             Cu 12 -- Cu 25                  0.26        -0.00          2.57345
+             Cu 20 -- Cu 25                  0.26        -0.00          2.57345
+             Cu 4  -- Cu 9                   0.25         0.00          2.57400
+             Cu 4  -- Cu 17                  0.25         0.00          2.57400
+             Cu 1  -- Cu 23                  0.26         0.00          2.57400
+             Cu 1  -- Cu 10                  0.26        -0.00          2.57400
+             Cu 1  -- Cu 14                  0.26         0.00          2.57401
+             Cu 1  -- Cu 19                  0.26        -0.00          2.57401
+             Cu 14 -- Cu 28                  0.27        -0.00          2.57412
+             Cu 23 -- Cu 28                  0.27        -0.00          2.57412
+             Cu 10 -- Cu 28                  0.27         0.00          2.57412
+             Cu 19 -- Cu 28                  0.27         0.00          2.57413
+             Cu 1  -- Cu 28                  0.27        -0.00          2.57418
+             Cu 18 -- Cu 20                  0.24         0.00          2.57429
+             Cu 12 -- Cu 15                  0.24         0.00          2.57431
+             Cu 11 -- Cu 12                  0.24         0.00          2.57432
+             Cu 20 -- Cu 22                  0.24         0.00          2.57433
+             Cu 19 -- Cu 21                  0.24        -0.00          2.57468
+             Cu 10 -- Cu 13                  0.24         0.00          2.57468
+             Cu 13 -- Cu 14                  0.24         0.00          2.57471
+             Cu 21 -- Cu 23                  0.24         0.00          2.57472
+             Cu 20 -- Cu 27                  0.26        -0.00          2.57537
+             Cu 12 -- Cu 29                  0.26         0.00          2.57540
+             Cu 12 -- Cu 26                  0.26        -0.00          2.57541
+             Cu 20 -- Cu 30                  0.26         0.00          2.57544
+             Cu 6  -- Cu 30                  0.24         0.00          2.57700
+             Cu 3  -- Cu 26                  0.24         0.00          2.57701
+             Cu 7  -- Cu 29                  0.24         0.00          2.57702
+             Cu 2  -- Cu 27                  0.24         0.00          2.57703
+             Cu 6  -- Cu 23                  0.24        -0.00          2.57716
+             Cu 3  -- Cu 10                  0.24        -0.00          2.57717
+             Cu 7  -- Cu 14                  0.24        -0.00          2.57718
+             Cu 2  -- Cu 19                  0.24        -0.00          2.57719
+             Cu 9  -- Cu 30                  0.26         0.00          2.57805
+             Cu 17 -- Cu 26                  0.26         0.00          2.57805
+             Cu 17 -- Cu 29                  0.26         0.00          2.57805
+             Cu 9  -- Cu 27                  0.26        -0.00          2.57806
+             Cu 13 -- Cu 24                  0.29         0.00          2.57809
+             Cu 16 -- Cu 21                  0.29         0.00          2.57809
+             Cu 19 -- Cu 26                  0.26        -0.00          2.57859
+             Cu 10 -- Cu 27                  0.26        -0.00          2.57859
+             Cu 14 -- Cu 30                  0.26        -0.00          2.57860
+             Cu 23 -- Cu 29                  0.26        -0.00          2.57860
+             Cu 1  -- Cu 6                   0.24         0.00          2.57880
+             Cu 1  -- Cu 7                   0.24         0.00          2.57880
+             Cu 1  -- Cu 3                   0.24         0.00          2.57881
+             Cu 1  -- Cu 2                   0.24         0.00          2.57883
+             Cu 11 -- Cu 16                  0.30        -0.00          2.58010
+             Cu 18 -- Cu 24                  0.30        -0.00          2.58010
+             Cu 22 -- Cu 24                  0.30         0.00          2.58016
+             Cu 15 -- Cu 16                  0.30         0.00          2.58016
+             Cu 9  -- Cu 12                  0.26         0.00          2.58041
+             Cu 17 -- Cu 20                  0.26         0.00          2.58041
+             Cu 6  -- Cu 9                   0.24         0.00          2.58085
+             Cu 7  -- Cu 17                  0.24         0.00          2.58086
+             Cu 3  -- Cu 17                  0.24         0.00          2.58087
+             Cu 2  -- Cu 9                   0.24         0.00          2.58088
+             Cu 13 -- Cu 27                  0.24         0.00          2.58151
+             Cu 21 -- Cu 26                  0.24         0.00          2.58152
+             Cu 21 -- Cu 29                  0.24         0.00          2.58155
+             Cu 13 -- Cu 30                  0.24         0.00          2.58156
+             Cu 4  -- Cu 25                  0.25         0.00          2.58167
+             Cu 28 -- Cu 30                  0.27        -0.00          2.58537
+             Cu 28 -- Cu 29                  0.27        -0.00          2.58537
+             Cu 26 -- Cu 28                  0.27        -0.00          2.58538
+             Cu 27 -- Cu 28                  0.27        -0.00          2.58538
+             Cu 2  -- Cu 20                  0.24         0.00          2.58612
+             Cu 7  -- Cu 12                  0.24         0.00          2.58613
+             Cu 3  -- Cu 12                  0.24         0.00          2.58615
+             Cu 6  -- Cu 20                  0.24         0.00          2.58616
+             Cu 8  -- Cu 27                  0.23         0.00          2.60112
+             Cu 8  -- Cu 26                  0.23         0.00          2.60113
+             Cu 8  -- Cu 29                  0.23         0.00          2.60117
+             Cu 8  -- Cu 30                  0.23         0.00          2.60118
+             Cu 13 -- Cu 31                  0.23        -0.00          2.60750
+             Cu 21 -- Cu 31                  0.23        -0.00          2.60750
+             Cu 5  -- Cu 31                  0.23         0.00          2.61044
+             Cu 8  -- Cu 31                  0.22         0.00          2.66068
+================================================================================
+ 
 
 Writing analysis data to CuVac.castep_bin
 
 Writing model to CuVac.check
- *********************** 
-     Iteration:    25
-         Max Force Component:             0.052713 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    26
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    27
-         Max Force Component:             0.052715 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    28
-         Max Force Component:             0.054026 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    29
-         Max Force Component:             0.052715 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    30
-         Max Force Component:             0.054028 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    31
-         Max Force Component:             0.052713 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    32
-         Max Force Component:             0.054024 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    33
-         Max Force Component:             0.052714 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    34
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    35
-         Max Force Component:             0.052714 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    36
-         Max Force Component:             0.054028 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    37
-         Max Force Component:             0.052714 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    38
-         Max Force Component:             0.054026 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    39
-         Max Force Component:             0.052713 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    40
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    41
-         Max Force Component:             0.052716 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    42
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    43
-         Max Force Component:             0.052713 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    44
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    45
-         Max Force Component:             0.052714 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
- *********************** 
-     Iteration:    46
-         Max Force Component:             0.054025 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
-  Saving model to checkpoint file...
-
-Writing analysis data to CuVac.castep_bin
-
-Writing model to CuVac.check
- *********************** 
-     Iteration:    47
-         Max Force Component:             0.052715 eV/Ang (0)
-         Max Displacement Component:      0.000000 Ang (*)
-
- *********************** 
+ 
+ A BibTeX formatted list of references used in this run has been written to 
+ CuVac.bib
+ 
+Initialisation time =      9.25 s
+Calculation time    =   9326.40 s
+Finalisation time   =      2.80 s
+Total time          =   9338.45 s
+Peak Memory Use     = 5526264 kB
+  
+Overall parallel efficiency rating: Mediocre (50%)                              
+  
+Data was distributed by:-
+G-vector (4-way); efficiency rating: Mediocre (58%)                             
+k-point (32-way); efficiency rating: Very good (80%)                            
